@@ -3,7 +3,7 @@ import sys
 sys.path.append(r"./hilight_aglo_v2")
 sys.path.append(r"./package")
 
-import prepocessing.py
+import preprocessing
 
 def lambda_handler(event, context):
     website_name = "Twitter"
