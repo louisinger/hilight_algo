@@ -1,7 +1,7 @@
 import json
 import sys
-sys.path.insert(0, './hilight_algo_v2')
-import basic_segmentation_twitter_v3
+sys.path.append('./hilight_algo_v2/')
+from hilight_algo_v2.basic_segmentation_twitter_v3 import *
 
 def lambda_handler(event, context):
    
@@ -9,5 +9,5 @@ def lambda_handler(event, context):
     if (name == "Twitter"):
 	return basic_segmentation_twitter_v3.find_sentences()
 	
-    return "null"
+
     
