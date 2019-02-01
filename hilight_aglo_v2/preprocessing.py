@@ -25,12 +25,13 @@ def del_break(file):
     '''
 
 
-    f = open(file, "r",encoding = "utf8")
-    raw = f.read().replace('\n','')
+    f = open(file, encoding = "utf8")
+    raw = f.read()
+    raw = raw.replace('\n','')
     f.close()
-    output= open(path + file, "w", encoding="utf8")
-    print(raw, file=output)
-    output.close()
+    #output= open(path + file, "w", encoding="utf8")
+    #print(raw, file=output)
+    #output.close()
 
 def sentence_tokenize(file, language):
     '''
@@ -40,7 +41,8 @@ def sentence_tokenize(file, language):
     # Il faudra adapter le path pour les fichiers des CGUs
     del_break(file)
     f = open(file, encoding="utf8")
-    raw = f.read().replace('\n\n', '. ').replace('\n', ' ')
+    raw = f.read()
+    raw = raw.replace('\n\n', '. ').replace('\n', ' ')
     f.close()
     # l'objet JSON
     data_stopwords = {}
@@ -78,12 +80,12 @@ def sentence_tokenize(file, language):
 
 
     # rÃ©sultat pour l'instant est juste un fichier output.txt -> choisir le path Ã©galement
-    output_file = open(path + "output.txt", "w", encoding="utf8")
-    print(json_data, file=output_file)
+    #output_file = open(path + "output.txt", "w", encoding="utf8")
+    #print(json_data, file=output_file)
 
     # rÃ©sultat pour l'instant est juste un fichier ouput_stopwords.txt -> choisir le path Ã©galement
-    output_file_stopwords = open(path + "output_stopwords.txt", "w", encoding="utf8")
-    print(json_data_stopwords, file=output_file_stopwords)
+    #output_file_stopwords = open(path + "output_stopwords.txt", "w", encoding="utf8")
+    #print(json_data_stopwords, file=output_file_stopwords)
 
     return data, data_stopwords
 
@@ -268,12 +270,12 @@ def find_sentences(file, language):
         #on output
         #print(grouped_result)
         json_useful_sentence = json.dumps(useful_sentence, indent=3)
-        output_useful_sentence = open("./useful_sentence.txt", "w", encoding="utf8")
-        print(json_useful_sentence, file=output_useful_sentence)
+        '''output_useful_sentence = open("./useful_sentence.txt", "w", encoding="utf8")
+        print(json_useful_sentence, file=output_useful_sentence)'''
 
         json_useful_sentence_full = json.dumps(useful_sentence_full, indent=3)
-        output_useful_sentence_full = open("./useful_sentence_full.txt", "w", encoding="utf8")
-        print(json_useful_sentence_full, file=output_useful_sentence_full)
+        '''output_useful_sentence_full = open("./useful_sentence_full.txt", "w", encoding="utf8")
+        print(json_useful_sentence_full, file=output_useful_sentence_full)'''
         #print(json_useful_sentence)
         #print(json_useful_sentence)
         return json_useful_sentence_full
