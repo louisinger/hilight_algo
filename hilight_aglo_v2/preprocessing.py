@@ -17,18 +17,18 @@ from collections import defaultdict
 
 # Ne pas oublier de dl toutes les libs
 # nltk.download()
-
+path = "./tmp/"
 ##### PREPROCESSING ######
 def del_break(file):
     '''
      Remove breaks from a text
     '''
-    path = "/tmp/"
-    file = path + file
+
+
     f = open(file, "r",encoding = "utf8")
     raw = f.read().replace('\n','')
     f.close()
-    output= open(file, "w", encoding="utf8")
+    output= open(path + file, "w", encoding="utf8")
     print(raw, file=output)
     output.close()
 
@@ -78,11 +78,11 @@ def sentence_tokenize(file, language):
 
 
     # rÃ©sultat pour l'instant est juste un fichier output.txt -> choisir le path Ã©galement
-    output_file = open("./output.txt", "w", encoding="utf8")
+    output_file = open(path + "output.txt", "w", encoding="utf8")
     print(json_data, file=output_file)
 
     # rÃ©sultat pour l'instant est juste un fichier ouput_stopwords.txt -> choisir le path Ã©galement
-    output_file_stopwords = open("./output_stopwords.txt", "w", encoding="utf8")
+    output_file_stopwords = open(path + "output_stopwords.txt", "w", encoding="utf8")
     print(json_data_stopwords, file=output_file_stopwords)
 
     return data, data_stopwords
