@@ -1,5 +1,7 @@
 import json
-import hilight_algo_v2/basic_segmentation_twitter_v3
+import sys
+sys.path.insert(0, './hilight_algo_v2')
+import basic_segmentation_twitter_v3
 
 def lambda_handler(event, context):
    
