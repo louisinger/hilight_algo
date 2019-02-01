@@ -26,7 +26,7 @@ def del_break(file):
     f = open(file, encoding = "utf8")
     raw = f.read().replace('\n','')
     f.close()
-    output= open("./regular"+file, "w", encoding="utf8")
+    output= open(file, "w", encoding="utf8")
     print(raw, file=output)
     output.close()
 
