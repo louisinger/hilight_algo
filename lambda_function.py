@@ -1,6 +1,7 @@
 import json
 import sys
 sys.path.append(r"./hilight_aglo_v2")
+sys.path.append(r"./package")
 
 import basic_segmentation_twitter_v3
 
