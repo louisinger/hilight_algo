@@ -23,6 +23,8 @@ def del_break(file):
     '''
      Remove breaks from a text
     '''
+    path = "/tmp/"
+    file = path + file
     f = open(file, "r",encoding = "utf8")
     raw = f.read().replace('\n','')
     f.close()
