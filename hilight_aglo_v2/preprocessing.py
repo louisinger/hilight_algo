@@ -7,7 +7,9 @@ Created on 9 dï¿½c. 2018
 '''
 import sys
 import json
-import nltk
+import nltk.tokenize
+import nltk.corpus
+import nltk.stem
 from nltk.tokenize import sent_tokenize
 from nltk.corpus import stopwords
 import re
