@@ -103,7 +103,7 @@ def find_sentences(file, language):
 
         # mots a chercher
         if language == "english":
-            word_to_find = ("Personal data,professional data,Log data,account data,Financial data,Sensitive data,Conservation,Processing,profiling,data controller,third parties,third parties identities,right objection,right access,right delete,Right portability,Consent Security,Binding Corporate Rules ,BCRs,Biometric Data,Data Controller,Data Processor,Data Protection Authority,Data Protection Directive 95 46 EC,Data Protection Officer,DPO,Data Subject,Encrypted Data,Enterprise Content Management,ECM,Genetic Data,Personal Data,Personal Data Breach,Privacy by Design,Privacy Impact,Assessment,PIA,Processing,Profiling,Pseudonymisation,Right to Access,Right to Data Portability,Right to be Forgotten,Supervisory Authority ")
+            word_to_find = ("Personal data,professional data,Log data,account data,Financial data,Sensitive data,Conservation,Processing,profiling,data controller,third parties,third parties identities,right objection,right access,right delete,Right portability,Consent Security,Binding Corporate Rules ,BCRs,Biometric Data,Data Controller,Data Processor,Data Protection Authority,Data Protection Directive 95 46 EC,Data Protection Officer,DPO,Data Subject,Encrypted Data,Enterprise Content Management,ECM,Genetic Data,Personal Data,Personal Data Breach,Privacy by Design,Privacy Impact,Assessment,PIA,Processing,Profiling,Pseudonymisation,Right to Access,Right to Data Portability,Right to be Forgotten,Supervisory Authority,Authorize data,Privacy Shield")
         elif language =="french":
             word_to_find = ("Données personnelles,données professionnelles,données de journal,données de compte,données financières,données sensibles,conservation,traitement,profilage,contrôleurs de données,tiers,identités de tiers,droit d'objection,droit d'accès,supprimer,portabilité,consentement")
         else:
@@ -157,7 +157,7 @@ def find_sentences(file, language):
         #print(words_analysed_from_text)
         #on cherche les mots equivalent ainsi que leur index
         word_found = [(key, value) for i in words_analysed_from_text for key, value in i.items() for k in data_stopwords_stem if value == k  ]
-        type(word_found)
+        #print(word_found)
 
         #Same mais pour les mots groupés !
         #word_found_grouped = [(key, value) for i in ]
@@ -174,7 +174,7 @@ def find_sentences(file, language):
         len(index_found)
         #print(index_found)
         # on cherche les phrases entieres correspondante
-        useful_sentence = [{k1 : [v1,v2]} for k1,v1 in index_found.items() for k2,v2 in data.items() if k1==k2]
+        #useful_sentence = [{k1 : [v1,v2]} for k1,v1 in index_found.items() for k2,v2 in data.items() if k1==k2]
 
 
 
@@ -191,7 +191,7 @@ def find_sentences(file, language):
 
                 for word in lists:
                     for elem in v:
-                        if (word in elem and word not in temp_list):
+                        if (word[:-1] in elem and word not in temp_list):
                             temp_inc += 1
 
                             temp_list.append(elem)
@@ -217,16 +217,16 @@ def find_sentences(file, language):
                 for realword,stemword2 in mapOfWord.items(): # pour chaque vrai mots clefs associer aux listes de stemword
                     temp_inc = 0
                     temp_word = None
-
-                    if len(lists) == len(stemword2):
+                    #print(index , stemword, realword)
+                    if (len(lists) == len(stemword2) and lists != []):
                         for word in lists:  # pour chaque mot de la phrase
                             for word2 in stemword2: # pour chaque mot a de la map
                                     if word == word2 and temp_inc < len(lists):
                                         temp_inc += 1
                                         if temp_inc == len(lists):
-                                            '''print(index , stemword)
-                                            print(realword)
-                                            print("break")'''
+                                            #print(index , stemword)
+                                            #print(realword)
+
                                             break
 
                                     #print(word, word2, temp_inc, lengthstem, "\n")
@@ -241,7 +241,7 @@ def find_sentences(file, language):
                         if temp_word != None:
 
                             temp_list.append(temp_word)
-                            print(index,stemword, temp_list)
+                            #print(index,stemword, temp_list)
                             break
 
                     if len(temp_list) == len(stemword):
@@ -266,9 +266,9 @@ def find_sentences(file, language):
 
             final_data.update({index : temp_list})
 
-        print(final_data)
-        #useful_sentence = [{k1 : [v1,v2]} for k1,v1 in index_found.items() for k2,v2 in data.items() if k1==k2]
-        useful_sentence_full = [{k1 : [v1,v2]} for k1,v1 in final_data.items() for k2,v2 in data.items() if k1==k2]
+        #print(final_data)
+        useful_sentence = [{"line":k1 ,"keywords":v1,"sentence":v2} for k1,v1 in index_found.items() for k2,v2 in data.items() if k1==k2]
+        useful_sentence_full = [{"line" : k1 , "keywords" : v1 , "sentence" : v2} for k1,v1 in final_data.items() for k2,v2 in data.items() if k1==k2]
         #on output
         #print(grouped_result)
         json_useful_sentence = json.dumps(useful_sentence, indent=3)

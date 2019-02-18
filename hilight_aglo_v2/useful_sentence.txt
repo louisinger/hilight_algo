@@ -1,1096 +1,1007 @@
 [
    {
-      "0": [
-         [
-            "privaci"
-         ],
-         "\u00ef\u00bb\u00bfTwitter Privacy Policy."
-      ]
-   },
-   {
-      "1": [
-         [
-            "control",
-            "data"
-         ],
-         "We believe you should always know what data we collect from you and how we use it, and that you should have meaningful control over both."
-      ]
-   },
-   {
-      "3": [
-         [
-            "privaci"
-         ],
-         "That\u00e2\u0080\u0099s the purpose of this Privacy Policy."
-      ]
-   },
-   {
-      "6": [
-         [
-            "direct",
-            "protect"
-         ],
-         "We give you non\u00e2\u0080\u0094public ways to communicate on Twitter too, through protected Tweets and Direct Messages."
-      ]
-   },
-   {
-      "7": [
-         [
-            "person"
-         ],
-         "You can also use Twitter under a pseudonym if you prefer not to use your name.. 0 When you use Twitter, even if you\u00e2\u0080\u0099re just looking at Tweets, we receive some personal information from you like the type of device you\u00e2\u0080\u0099re using and your IP address."
-      ]
-   },
-   {
-      "9": [
-         [
-            "control",
-            "account",
-            "secur",
-            "data",
-            "access"
-         ],
-         "We use this information for things like keeping your account secure and showing you more relevant Tweets, people to follow, events, and ads.. 0 We give you control through your settings to limit the data we collect from you and how we use it, and to control things like account security, marketing preferences, apps that can access your account, and address book contacts you\u00e2\u0080\u0099ve uploaded to Twitter."
-      ]
-   },
-   {
-      "10": [
-         [
-            "content"
-         ],
-         "You can also always download the information you have shared on Twitter.. 0 In addition to information you share with us, we use your Tweets, content you\u00e2\u0080\u0099ve read, Liked, or Retweeted, and other information to determine what topics you\u00e2\u0080\u0099re interested in, your age, the languages you speak, and other signals to show you more relevant content."
-      ]
-   },
-   {
-      "11": [
-         [
-            "privaci",
-            "process",
-            "person"
-         ],
-         "We give you transgarency into that information, and you can modify or correct it at any time.. 0 If you have questions about this policy, how we collect or process your personal data, or anything else related to our privacy practices, we want to hear from you."
-      ]
-   },
-   {
-      "14": [
-         [
-            "content",
-            "account"
-         ],
-         "For example, you must have an account in order to upload or share content on Twitter."
-      ]
-   },
-   {
-      "16": [
-         [
-            "profil",
-            "account"
-         ],
-         "Basic Account Information: You don\u00e2\u0080\u0099t have to create an account to use some of our service features, such as searching and viewing public Twitter profiles or watching a broadcast on Periscope\u00e2\u0080\u0099s website."
-      ]
-   },
-   {
-      "17": [
-         [
-            "data",
-            "person"
-         ],
-         "If you do choose to create an account, you must provide us with some personal data so that we can provide our services to you."
-      ]
-   },
-   {
-      "20": [
-         [
-            "profil",
-            "manag"
-         ],
-         "You can also create and manage multiple Twitter accounts, for example to express different parts of your identity.. Public Information: Most activity on Twitter is public, including your profile information, your time zone and language, when you created your account, and your Tweets and certain information about your Tweets like the date, time, and application and version of Twitter you Tweeted from."
-      ]
-   },
-   {
-      "24": [
-         [
-            "account"
-         ],
-         "So are your hearts, comments, the number of hearts you\u00e2\u0080\u0099ve received, which accounts you are a Superfan of, and whether you watched a broadcast live or on replay."
-      ]
-   },
-   {
-      "25": [
-         [
-            "content"
-         ],
-         "Any hearts, comments, or other content you contribute to another account\u00e2\u0080\u0099s broadcast will remain part of that broadcast for as long as it remains on Periscope."
-      ]
-   },
-   {
-      "27": [
-         [
-            "sensit"
-         ],
-         "For example, other people may tag you in a photo (if your settings allow) or mention you in a Tweet.. You are responsible for your Tweets and other information you provide through our services, and you should think carefully about what you make public, especially if it is sensitive information."
-      ]
-   },
-   {
-      "28": [
-         [
-            "content",
-            "delet"
-         ],
-         "If you update your public information on Twitter, such as by deleting a Tweet or deactivating your account, we will reflect your updated content on Twitter.com, Twitter for iOS, and Twitter for Android.."
-      ]
-   },
-   {
-      "30": [
-         [
-            "content"
-         ],
-         "We generally make this content available in limited quantities for free and Charge licensing fees for large\u00e2\u0080\u0094scale access."
-      ]
-   },
-   {
-      "31": [
-         [
-            "data"
-         ],
-         "We have standard terms that govern how this data can be used, and a compliance program to enforce these terms."
-      ]
-   },
-   {
-      "34": [
-         [
-            "data"
-         ],
-         "For more information about how we make public data on Twitter available to the world, visit https://develober.twitter.com.."
-      ]
-   },
-   {
-      "35": [
-         [
-            "account"
-         ],
-         "Contact Information and Address Books: We use your contact information, such as your email address or phone number, to authenticate your account and keep it \u00e2\u0080\u0094 and our services \u00e2\u0080\u0094 secure, and to help prevent spam, fraud, and abuse."
-      ]
-   },
-   {
-      "36": [
-         [
-            "account",
-            "person"
-         ],
-         "We also use contact information to personalize our services, enable certain account features (for example, for loqin verification or Twitter via SMS), and to send you information about our services."
-      ]
-   },
-   {
-      "38": [
-         [
-            "account"
-         ],
-         "Twitter also uses your contact information to market to you as your country\u00e2\u0080\u0099s laws allow, and to help others find your account if your settings permit, including through third\u00e2\u0080\u0094party services and Client applications."
-      ]
-   },
-   {
-      "39": [
-         [
-            "control"
-         ],
-         "You can use your settings for email and mobile notifications to control notifications you receive from Twitter."
-      ]
-   },
-   {
-      "42": [
-         [
-            "content",
-            "account"
-         ],
-         "We also use this information to better recommend content to you and others.. You can sign up for Periscope with an account from another service like Twitter, Google, or Facebook, or connect your Periscope account to these other services."
-      ]
-   },
-   {
-      "43": [
-         [
-            "content",
-            "account"
-         ],
-         "If you do, we will use information from that service, including your email address, friends, or contacts list, to recommend other accounts or content to you or to recommend your account or content to others."
-      ]
-   },
-   {
-      "44": [
-         [
-            "control",
-            "account"
-         ],
-         "You can control whether your Periscope account is discoverable by email through your Periscoge settings.."
-      ]
-   },
-   {
-      "45": [
-         [
-            "content"
-         ],
-         "If you email us, we will keep the content of your message, your email address, and your contact information to respond to your request.."
-      ]
-   },
-   {
-      "46": [
-         [
-            "control",
-            "direct"
-         ],
-         "Direct Messages and Non-Public Communications: We provide certain features that let you communicate more privately or control who sees your content."
-      ]
-   },
-   {
-      "47": [
-         [
-            "direct"
-         ],
-         "For example, you can use Direct Messages to have non\u00e2\u0080\u0094public conversations on Twitter, grotect your Tweets, or host private broadcasts on Periscope."
-      ]
-   },
-   {
-      "48": [
-         [
-            "process",
-            "direct"
-         ],
-         "When you communicate with others by sending or receiving Direct Messages, we will store and process your communications and information related to them."
-      ]
-   },
-   {
-      "50": [
-         [
-            "content",
-            "protect"
-         ],
-         "We also use information about whom you have communicated with and when (but not the content of those communications) to better understand the use of our services, to protect the safety and integrity of our platform, and to show more relevant content."
-      ]
-   },
-   {
-      "51": [
-         [
-            "content"
-         ],
-         "We share the content of your Direct."
-      ]
-   },
-   {
-      "53": [
-         [
-            "content",
-            "direct"
-         ],
-         "Note that if you interact in a way that would ordinarily be public with Twitter content shared with you via Direct Message, for instance by liking a Tweet, those interactions will be public."
-      ]
-   },
-   {
-      "54": [
-         [
-            "control",
-            "account",
-            "direct",
-            "delet"
-         ],
-         "When you use features like Direct Messages to communicate, remember that recipients have their own copy of your communications on Twitter \u00e2\u0080\u0094 even if you delete your copy of those messages from your account \u00e2\u0080\u0094 which they may duplicate, store, or re\u00e2\u0080\u0094share.. Payment Information: You may provide us with payment information, including your credit or debit card number, card expiration date, CW code, and billing address, in order to purchase advertising or other offerings provided as part of our services.. How You Control the Information You Share with Us:."
-      ]
-   },
-   {
-      "58": [
-         [
-            "content",
-            "direct",
-            "sensit"
-         ],
-         "0 Whether you will be able to receive Direct Messages from anyone on Twitter or just your followers Whether others can find you based on your email or phone number Whether you upload your address book to Twitter for storage and use When and where you may see sensitive content on Twitter Whether you want to M or m other Twitter accounts."
-      ]
-   },
-   {
-      "60": [
-         [
-            "parti",
-            "third"
-         ],
-         "We receive certain information when you use our services or other websites or mobile applications that include our content, and from third parties including advertisers."
-      ]
-   },
-   {
-      "61": [
-         [
-            "data"
-         ],
-         "Like the information you share with us, we use the data below to operate our services.."
-      ]
-   },
-   {
-      "62": [
-         [
-            "content",
-            "account",
-            "person",
-            "secur",
-            "subject"
-         ],
-         "Location Information: We require information about your signup and current location, which we get from signals such as your IP address or device settings, to securely and reliably set up and maintain your account and to provide our services to you.. Subject to your settings, we may collect, use, and store additional information about your location \u00e2\u0080\u0094 such as your current precise position or places where you\u00e2\u0080\u0099ve previously used Twitter \u00e2\u0080\u0094 to operate or personalize our services including with more relevant content like local trends, stories, ads, and suggestions for people to follow."
-      ]
-   },
-   {
-      "68": [
-         [
-            "data",
-            "person"
-         ],
-         "They may also collect other personal data from you, such as cookie identifiers or your IP address.."
-      ]
-   },
-   {
-      "69": [
-         [
-            "data"
-         ],
-         "Cookies: A cookie is a small piece of data that is stored on your computer or mobile device."
-      ]
-   },
-   {
-      "70": [
-         [
-            "data"
-         ],
-         "Like many websites, we use cookies and similar technologies to collect additional website usage data and to operate our services."
-      ]
-   },
-   {
-      "74": [
-         [
-            "content",
-            "account",
-            "person"
-         ],
-         "When your browser or device allows it, we use both session cookies and persistent cookies to better understand how you interact with our services, to monitor aggregate usage patterns, and to personalize and otherwise operate our services such as by providing account security, personalizing the content we show you including ads, and remembering your language preferences."
-      ]
-   },
-   {
-      "76": [
-         [
-            "log",
-            "content"
-         ],
-         "You can learn more about how we use cookies and similar technologies hei.. Log Data: We receive information when you view content on or otherwise interact with our services, which we refer to as \u00e2\u0080\u009cLog Data,\u00e2\u0080\u009d even if you have not created an account."
-      ]
-   },
-   {
-      "77": [
-         [
-            "parti",
-            "account"
-         ],
-         "For example, when you visit our websites, sign into our services, interact with our email notifications, use your account to authenticate to a third\u00e2\u0080\u0094party service, or visit a third\u00e2\u0080\u0094 party service that includes Twitter content, we may receive information about you."
-      ]
-   },
-   {
-      "78": [
-         [
-            "log",
-            "data"
-         ],
-         "This Log Data includes information such as your IP address, browser type, operating system, the referring web page, pages visited, location, your mobile carrier, device information (including device and application IDs), search terms, and cookie information."
-      ]
-   },
-   {
-      "79": [
-         [
-            "log",
-            "data"
-         ],
-         "We also receive Log Data when you click on, view, or interact with links on our services, including when you install another application through Twitter."
-      ]
-   },
-   {
-      "80": [
-         [
-            "log",
-            "data"
-         ],
-         "We use Log Data to operate our services and ensure their secure, reliable, and robust performance."
-      ]
-   },
-   {
-      "81": [
-         [
-            "account",
-            "content",
-            "secur",
-            "data",
-            "protect",
-            "log"
-         ],
-         "For example, we use Log Data to protect the security of accounts and to determine what content is popular on our services."
-      ]
-   },
-   {
-      "82": [
-         [
-            "third",
-            "log",
-            "content",
-            "data"
-         ],
-         "We also use this data to improve the content we show you, including ads.. We use information you provide to us and data we receive, including Log Data and data from third parties, to make inferences like what topics you may be interested in, how old you are, and what languages you speak."
-      ]
-   },
-   {
-      "83": [
-         [
-            "content",
-            "person",
-            "design",
-            "data",
-            "log"
-         ],
-         "This helps us better design our services for you and personalize the content we show you, including ads.. Twitter for Web Data: When you view our content on third\u00e2\u0080\u0094party websites that integrate Twitter content such as embedded timelines or Tweet buttons, we may receive Log Data that includes the web page you visited."
-      ]
-   },
-   {
-      "84": [
-         [
-            "protect"
-         ],
-         "We use this information to better understand the use of our services, to protect the safety and integrity of our platform, and to show more relevant content, including ads."
-      ]
-   },
-   {
-      "86": [
-         [
-            "data"
-         ],
-         "We do not collect this data from browsers that we believe to be located in the European Union or EFTA States.."
-      ]
-   },
-   {
-      "88": [
-         [
-            "privaci"
-         ],
-         "We use the information described in this Privacy Policy to help make our advertising more relevant to you, to measure its effectiveness, and to help recognize your devices to serve you ads on and off of Twitter."
-      ]
-   },
-   {
-      "89": [
-         [
-            "content"
-         ],
-         "Our ad partners and affiliates share information with us such as browser cookie IDs, mobile device IDs, hashed email addresses, demographic or interest data, and content viewed or actions taken on a website or app."
-      ]
-   },
-   {
-      "91": [
-         [
-            "sensit"
-         ],
-         "In addition, our ads policies prohibit advertisers from targeting ads based on categories that we consider sensitive or are prohibited by law, such as race, religion, politics, sex life, or health."
-      ]
-   },
-   {
-      "92": [
-         [
-            "privaci"
-         ],
-         "Learn more about your privacy options for interest\u00e2\u0080\u0094based ads hei and about how ads work on our services hei.."
-      ]
-   },
-   {
-      "93": [
-         [
-            "data",
-            "process",
-            "person"
-         ],
-         "If you are an advertiser or a prospective advertiser, we process your personal data to help offer and provide our advertising services."
-      ]
-   },
-   {
-      "94": [
-         [
-            "privaci",
-            "data"
-         ],
-         "You can update your data in your Twitter Ads dashboard or by contacting us directly as described in this Privacy Policy.."
-      ]
-   },
-   {
-      "95": [
-         [
-            "data",
-            "access",
-            "process",
-            "person"
-         ],
-         "Developers: If you access our APls or developer portal, we process your personal data to help provide our services."
-      ]
-   },
-   {
-      "96": [
-         [
-            "parti",
-            "content",
-            "account",
-            "privaci",
-            "third",
-            "data",
-            "corpor"
-         ],
-         "You can update your data by contacting us directly as described in this Privacy Policy.. Other Third Parties and Affiliates: We may receive information about you from third parties who are not our ad partners, such as others on Twitter, partners who help us evaluate the safety and quality of content on our platform, our corporate affiliates, and other services you link to your Twitter account.. You may choose to connect your Twitter account to accounts on another service, and that other service may send us information about your account on that service."
-      ]
-   },
-   {
-      "98": [
-         [
-            "log",
-            "account",
-            "person"
-         ],
-         "For integrations that Twitter formally supports, you may revoke this permission at any time from your application settings; for other integrations, please visit the other service you have connected to Twitter.. Personalizing Across Your Devices: When you log into Twitter on a browser or device, we will associate that browser or device with your account for purposes such as authentication, security, and personalization."
-      ]
-   },
-   {
-      "99": [
-         [
-            "log",
-            "subject",
-            "account"
-         ],
-         "Subject to your settings, we may also associate your account with browsers or devices other than those you use to log into Twitter (or associate your logged\u00e2\u0080\u0094out device or browser with other browsers or devices)."
-      ]
-   },
-   {
-      "100": [
-         [
-            "person"
-         ],
-         "We do this to operate and personalize our services."
-      ]
-   },
-   {
-      "101": [
-         [
-            "control",
-            "content"
-         ],
-         "For example, if you visit websites with sports content on your laptop, we may show you sports\u00e2\u0080\u0094related ads on Twitter for Android.. How You Control Additional Information We Receive:."
-      ]
-   },
-   {
-      "102": [
-         [
-            "data",
-            "person"
-         ],
-         "Your Twitter Personalization and data settinqs let you decide: 0 Whether we show you interest\u00e2\u0080\u0094based ads on and off Twitter How we personalize your experience across devices Whether we collect and use your precise location Whether we personalize your experience based on where you\u00e2\u0080\u0099ve been Whether we keep track of the websites where you see Twitter content."
-      ]
-   },
-   {
-      "104": [
-         [
-            "account",
-            "data"
-         ],
-         "You can use Your Twitter data to review: 0 Advertisers who have included you in tailored audiences to serve you ads 0 Demographic and interest data about your account from our ads partners 0 Information that Twitter has inferred about you such as your age range, gender, languages, and interests."
-      ]
-   },
-   {
-      "105": [
-         [
-            "log"
-         ],
-         "We also provide a version of these tools on Twitter if you don\u00e2\u0080\u0099t have a Twitter account, or if you\u00e2\u0080\u0099re logged out of your account."
-      ]
-   },
-   {
-      "106": [
-         [
-            "log",
-            "account",
-            "data"
-         ],
-         "This lets you see the data and settings for the logged out browser or device you are using, separate from any Twitter account that uses that browser or device."
-      ]
-   },
-   {
-      "107": [
-         [
-            "control",
-            "person"
-         ],
-         "On Periscope, you can control whether we personalize your experience based on your watch history through your settings.. Information We Share and Disclose."
-      ]
-   },
-   {
-      "108": [
-         [
-            "design"
-         ],
-         "As noted above, Twitter is designed to broadly and instantly disseminate information you share publicly through our services."
-      ]
-   },
-   {
-      "109": [
-         [
-            "subject",
-            "person"
-         ],
-         "In the limited circumstances where we disclose your private personal data, we do so subject to your control, because it\u00e2\u0080\u0099s necessary to operate our services, or because it\u00e2\u0080\u0099s required by law.."
-      ]
-   },
-   {
-      "110": [
-         [
-            "account",
-            "author",
-            "person",
-            "consent",
-            "data",
-            "direct",
-            "access"
-         ],
-         "Sharing You Control: We share or disclose your personal data with your consent or at your direction, such as when you authorize a third\u00e2\u0080\u0094barty web client or application to access your account or when you direct us to share your feedback with a business."
-      ]
-   },
-   {
-      "111": [
-         [
-            "parti",
-            "person",
-            "third",
-            "data",
-            "direct",
-            "protect",
-            "subject",
-            "access"
-         ],
-         "If you\u00e2\u0080\u0099ve shared information like Direct Messages or protected Tweets with someone else who accesses Twitter through a third\u00e2\u0080\u0094party service, keep in mind that the information may be shared with the third\u00e2\u0080\u0094party service.. Subject to your settings, we also provide certain third parties with personal data to help us offer or operate our services."
-      ]
-   },
-   {
-      "113": [
-         [
-            "person"
-         ],
-         "We also share device identifiers, along with the interests or other characteristics of a device or the person using it, to help partners decide whether to serve an ad to that device or to enable them to conduct marketing, brand analysis, interest-based advertising, or similar activities."
-      ]
-   },
-   {
-      "114": [
-         [
-            "control",
-            "data",
-            "person"
-         ],
-         "You can learn more about these partnerships in our Helg Center, and you can control whether Twitter shares your personal data in this way by using the \u00e2\u0080\u009cShare your data with Twitter\u00e2\u0080\u0099s business partners\u00e2\u0080\u0099 option in your Personalization and Data settinqs."
-      ]
-   },
-   {
-      "115": [
-         [
-            "control",
-            "data",
-            "privaci"
-         ],
-         "(This setting does not control sharing described elsewhere in our Privacy Policy, such as when we share data with our service providers.)"
-      ]
-   },
-   {
-      "116": [
-         [
-            "consent",
-            "person"
-         ],
-         "The information we share with these partners does not include your name, email address, phone number, or Twitter username, but some of these partnerships allow the information we share to be linked to other personal information if the partner gets your consent first.. Service Providers: We engage service providers to perform functions and provide services to us in the United States, Ireland, and other countries."
-      ]
-   },
-   {
-      "118": [
-         [
-            "parti",
-            "privaci",
-            "person",
-            "secur",
-            "third",
-            "data",
-            "subject"
-         ],
-         "We may share your private personal data with such service providers subject to obligations consistent with this Privacy Policy and any other appropriate confidentiality and security measures, and on the condition that the third parties use your private personal data only on our behalf and pursuant to our instructions."
-      ]
-   },
-   {
-      "119": [
-         [
-            "process"
-         ],
-         "We share your payment information with payment services providers to process payments; prevent, detect, and investigate fraud or other prohibited activities; facilitate dispute."
-      ]
-   },
-   {
-      "120": [
-         [
-            "control",
-            "data",
-            "privaci",
-            "person"
-         ],
-         "resolution such as chargebacks or refunds; and for other purposes associated with the acceptance of credit and debit cards.. Law, Harm, and the Public Interest: Notwithstanding anything to the contrary in this Privacy Policy or controls we may otherwise offer to you, we may preserve, use, or disclose your personal data if we believe that it is reasonably necessary to comply with a law, regulation, |edal process."
-      ]
-   },
-   {
-      "121": [
-         [
-            "content",
-            "protect",
-            "account",
-            "right"
-         ],
-         "or dovernmental request; to protect the safety of any person; to protect the safety or integrity of our platform, including to help prevent spam, abuse, or malicious actors on our services, or to explain why we have removed content or accounts from our services; to address fraud, security, or technical issues; or to protect our rights or property or the rights or property of those who use our services."
-      ]
-   },
-   {
-      "122": [
-         [
-            "person",
-            "privaci",
-            "third",
-            "data",
-            "object"
-         ],
-         "However, nothing in this Privacy Policy is intended to limit any legal defenses or objections that you may have to a third party\u00e2\u0080\u0099s, including a government\u00e2\u0080\u0099s, request to disclose your personal data.. Affiliates and Change of Ownership: In the event that we are involved in a bankruptcy, merger, acquisition, reorganization, or sale of assets, your personal data may be sold or transferred as part of that transaction."
-      ]
-   },
-   {
-      "123": [
-         [
-            "data",
-            "privaci",
-            "person"
-         ],
-         "This Privacy Policy will apply to your personal data as transferred to the new entity."
-      ]
-   },
-   {
-      "124": [
-         [
-            "data",
-            "person"
-         ],
-         "We may also disclose personal data about you to our corQorate affiliates in order to help operate our services and our affiliates\u00e2\u0080\u0099 services, including the delivery of ads.. Non-Personal Information: We share or disclose non\u00e2\u0080\u0094personal data, such as aggregated information like the total number of times people engaged with a Tweet, the number of people who clicked on a particular link or voted on a poll in a Tweet (even if only one did), the topics that people are Tweeting about in a particular location, or reports to advertisers about how many people saw or clicked on their ads.."
-      ]
-   },
-   {
-      "125": [
-         [
-            "person",
-            "manag"
-         ],
-         "Managing Your Personal Information with Us."
-      ]
-   },
-   {
-      "126": [
-         [
-            "control",
-            "data",
-            "person"
-         ],
-         "You control the personal data you share with us."
-      ]
-   },
-   {
-      "127": [
-         [
-            "access",
-            "data"
-         ],
-         "You can access or rectify this data at any time."
-      ]
-   },
-   {
-      "129": [
-         [
-            "consent",
-            "data"
-         ],
-         "We also provide you tools to object, restrict, or withdraw consent where applicable for the use of data you have provided to Twitter."
-      ]
-   },
-   {
-      "130": [
-         [
-            "account",
-            "person",
-            "data",
-            "access",
-            "portabl"
-         ],
-         "And we make the data you shared through our services portable and provide easy ways for you to contact us.. Accessing or Rectifying Your Personal Data: If you have registered an account on Twitter, we provide you with tools and account settings to access, correct, delete, or modify the personal data you provided to us and associated with your account."
-      ]
-   },
-   {
-      "131": [
-         [
-            "account"
-         ],
-         "You can download certain account information, including your Tweets, by following the instructions hei."
-      ]
-   },
-   {
-      "133": [
-         [
-            "account",
-            "person"
-         ],
-         "of your personal data, and download your account information, by following the instructions here."
-      ]
-   },
-   {
-      "134": [
-         [
-            "log",
-            "access",
-            "data"
-         ],
-         "You can learn more about the interests we have inferred about you in Your Twitter Data and request access to additional information here.. Deletion: We keep Log Data for a maximum of 18 months."
-      ]
-   },
-   {
-      "135": [
-         [
-            "account"
-         ],
-         "If you follow the instructions hei (or for Periscope w, your account will be deactivated and then deleted."
-      ]
-   },
-   {
-      "137": [
-         [
-            "parti",
-            "account",
-            "third",
-            "profil",
-            "delet"
-         ],
-         "For up to 30 days after deactivation it is still possible to restore your Twitter account if it was accidentally or wrongfully deactivated.. Keep in mind that search engines and other third parties may still retain copies of your public information, like your profile information and public Tweets, even after you have deleted the information from our services or deactivated your account."
-      ]
-   },
-   {
-      "139": [
-         [
-            "log",
-            "account",
-            "privaci",
-            "manag"
-         ],
-         "Object, Restrict, or Withdraw Consent: When you are logged into your Twitter account, you can manage your privacy settings and other account features here at any time.. Portability: Twitter provides you a means to download the information you have shared through our services by following the steps m. Periscope provides you a means to download the information you have shared through our services by following the steps E.. Additional Information or Assistance: Thoughts or questions about this Privacy Policy?"
-      ]
-   },
-   {
-      "141": [
-         [
-            "control",
-            "data",
-            "person"
-         ],
-         "If you live in the United States, the data controller responsible for your personal data is Twitter, Inc. with an address of:."
-      ]
-   },
-   {
-      "142": [
-         [
-            "privaci"
-         ],
-         "Twitter, lnc.. Attn: Privacy Policy Inquiry 1355 Market Street, Suite 900 San Francisco, CA 94103."
-      ]
-   },
-   {
-      "143": [
-         [
-            "control",
-            "data"
-         ],
-         "If you live outside the United States, the data controller is Twitter International Company, with an address of:."
-      ]
-   },
-   {
-      "144": [
-         [
-            "offic",
-            "protect",
-            "data"
-         ],
-         "Twitter International Company Attn: Data Protection Officer One Cumberland Place, Fenian Street."
-      ]
-   },
-   {
-      "146": [
-         [
-            "offic",
-            "protect",
-            "data"
-         ],
-         "If you are located in the European Union or EFTA States, you can confidentially contact Twitter\u00e2\u0080\u0099s Data Protection Officer hei."
-      ]
-   },
-   {
-      "147": [
-         [
-            "author",
-            "supervisori",
-            "data",
-            "right",
-            "protect"
-         ],
-         "If you wish to raise a concern about our use of your information (and without prejudice to any other rights you may have), you have the right to do so with your local supervisory authority or Twitter International Company\u00e2\u0080\u0099s lead supervisory authority, the Irish Data Protection Commission."
-      ]
-   },
-   {
-      "149": [
-         [
-            "direct"
-         ],
-         "Our services are not directed to children, and you may not use our services if you are under the age of 13."
-      ]
-   },
-   {
-      "150": [
-         [
-            "data",
-            "consent",
-            "process",
-            "person"
-         ],
-         "You must also be old enough to consent to the processing of your personal data in your country (in some countries we may allow your parent or guardian to do so on your behalf)."
-      ]
-   },
-   {
-      "151": [
-         [
-            "privaci"
-         ],
-         "You must be at least 16 years of age to use Periscope.. Our Global Operations and Privacy Shield."
-      ]
-   },
-   {
-      "153": [
-         [
-            "author",
-            "data"
-         ],
-         "Where the laws of your country allow you to do so, you authorize us to transfer, store, and use your data in the United States, Ireland, and any other country where we operate."
-      ]
-   },
-   {
-      "154": [
-         [
-            "author",
-            "privaci",
-            "person",
-            "data",
-            "protect",
-            "rule",
-            "access"
-         ],
-         "In some of the countries to which we transfer personal data, the privacy and data protection laws and rules regarding when government authorities may access data may vary from those of your country."
-      ]
-   },
-   {
-      "155": [
-         [
-            "data"
-         ],
-         "Learn more about our global operations and data transfer hei.."
-      ]
-   },
-   {
-      "156": [
-         [
-            "person",
-            "privaci",
-            "data",
-            "right",
-            "protect",
-            "subject"
-         ],
-         "When we transfer personal data outside of the European Union or EFTA States, we ensure an adequate level of protection for the rights of data subjects based on the adequacy of the receiving country\u00e2\u0080\u0099s data protection laws, contractual obligations placed on the recipient of the data (model clauses may be requested by inquiry as described below), or EU\u00e2\u0080\u0094US and Swiss\u00e2\u0080\u0094US Privacy Shield principles.. Twitter, lnc."
-      ]
-   },
-   {
-      "157": [
-         [
-            "data",
-            "privaci",
-            "person"
-         ],
-         "complies with the EU\u00e2\u0080\u0094US and Swiss\u00e2\u0080\u0094US Privacy Shield principles (the \u00e2\u0080\u009cPrinciples\u00e2\u0080\u009d) regarding the collection, use, sharing, and retention of personal data from the European Union and Switzerland, as described in our EU\u00e2\u0080\u0094US Privacy Shield certification and Swiss\u00e2\u0080\u0094US Privacy Shield certification.."
-      ]
-   },
-   {
-      "158": [
-         [
-            "subject",
-            "author",
-            "privaci"
-         ],
-         "If you have a Privacy Shield\u00e2\u0080\u0094related complaint, please contact us m. As part of our participation in Privacy Shield, if you have a dispute with us about our adherence to the Principles, we will seek to resolve it through our internal complaint resolution process, alternatively through the independent dispute resolution body M, and under certain conditions, through the Privacy Shield arbitration process.. Privacy Shield participants are subject to the investigatory and enforcement powers of the US Federal Trade Commission and other authorized statutory bodies."
-      ]
-   },
-   {
-      "159": [
-         [
-            "data",
-            "third",
-            "parti",
-            "person"
-         ],
-         "Under certain circumstances, participants may be liable for the transfer of personal data from the EU or Switzerland to third parties outside the EU and Switzerland."
-      ]
-   },
-   {
-      "160": [
-         [
-            "privaci"
-         ],
-         "Learn more about the EU\u00e2\u0080\u0094US Privacy Shield and Swiss\u00e2\u0080\u0094US Privacy Shield m.. Changes to This Privacy Policy."
-      ]
-   },
-   {
-      "161": [
-         [
-            "privaci"
-         ],
-         "We may revise this Privacy Policy from time to time."
-      ]
-   },
-   {
-      "162": [
-         [
-            "data",
-            "process",
-            "person"
-         ],
-         "The most current version of the policy will govern our processing of your personal data and will always be at https://twitter.com/privacy."
-      ]
-   },
-   {
-      "164": [
-         [
-            "access",
-            "privaci"
-         ],
-         "By continuing to access or use the Services after those changes become effective, you agree to be bound by the revised Privacy Policy.."
-      ]
-   },
-   {
-      "166": [
-         [
-            "privaci"
-         ],
-         "Archive of Previous Privacy Policies."
-      ]
+      "line": 0,
+      "keywords": [
+         "control",
+         "data",
+         "privaci"
+      ],
+      "sentence": "Twitter Privacy Policy We believe you should always know what data we collect from you and how we use it, and that you should have meaningful control over both."
+   },
+   {
+      "line": 2,
+      "keywords": [
+         "privaci"
+      ],
+      "sentence": "That\u2019s the purpose of this Privacy Policy."
+   },
+   {
+      "line": 4,
+      "keywords": [
+         "direct",
+         "protect"
+      ],
+      "sentence": "We give you non-public ways to communicate on Twitter too, through protected Tweets and Direct Messages."
+   },
+   {
+      "line": 6,
+      "keywords": [
+         "person"
+      ],
+      "sentence": "\u25cf When you use Twitter, even if you\u2019re just looking at Tweets, we receive some personal information from you like the type of device you\u2019re using and your IP address."
+   },
+   {
+      "line": 8,
+      "keywords": [
+         "secur",
+         "account"
+      ],
+      "sentence": "We use this information for things like keeping your account secure and showing you more relevant Tweets, people to follow, events, and ads."
+   },
+   {
+      "line": 9,
+      "keywords": [
+         "control",
+         "account",
+         "access",
+         "data"
+      ],
+      "sentence": "\u25cf We give you control through your settings to limit the data we collect from you and how we use it, and to control things like account security, marketing preferences, apps that can access your account, and address book contacts you\u2019ve uploaded to Twitter."
+   },
+   {
+      "line": 11,
+      "keywords": [
+         "content"
+      ],
+      "sentence": "\u25cf In addition to information you share with us, we use your Tweets, content you\u2019ve read, Liked, or Retweeted, and other information to determine what topics you\u2019re interested in, your age, the languages you speak, and other signals to show you more relevant content."
+   },
+   {
+      "line": 13,
+      "keywords": [
+         "person",
+         "process",
+         "privaci"
+      ],
+      "sentence": "\u25cf If you have questions about this policy, how we collect or process your personal data, or anything else related to our privacy practices, we want to hear from you."
+   },
+   {
+      "line": 15,
+      "keywords": [
+         "content",
+         "account"
+      ],
+      "sentence": "For example, you must have an account in order to upload or share content on Twitter."
+   },
+   {
+      "line": 17,
+      "keywords": [
+         "profil",
+         "account"
+      ],
+      "sentence": "Basic Account Information: You don\u2019t have to create an account to use some of our service features, such as searching and viewing public Twitter profiles or watching a broadcast on Periscope\u2019s website."
+   },
+   {
+      "line": 18,
+      "keywords": [
+         "person",
+         "data"
+      ],
+      "sentence": "If you do choose to create an account, you must provide us with some personal data so that we can provide our services to you."
+   },
+   {
+      "line": 21,
+      "keywords": [
+         "manag"
+      ],
+      "sentence": "You can also create and manage multiple Twitter accounts, for example to express different parts of your identity."
+   },
+   {
+      "line": 22,
+      "keywords": [
+         "profil"
+      ],
+      "sentence": "Public Information: Most activity on Twitter is public, including your profile information, your time zone and language, when you created your account, and your Tweets and certain information about your Tweets like the date, time, and application and version of Twitter you Tweeted from."
+   },
+   {
+      "line": 26,
+      "keywords": [
+         "account"
+      ],
+      "sentence": "So are your hearts, comments, the number of hearts you\u2019ve received, which accounts you are a Superfan of, and whether you watched a broadcast live or on replay."
+   },
+   {
+      "line": 27,
+      "keywords": [
+         "content"
+      ],
+      "sentence": "Any hearts, comments, or other content you contribute to another account\u2019s broadcast will remain part of that broadcast for as long as it remains on Periscope."
+   },
+   {
+      "line": 30,
+      "keywords": [
+         "sensit"
+      ],
+      "sentence": "You are responsible for your Tweets and other information you provide through our services, and you should think carefully about what you make public, especially if it is sensitive information."
+   },
+   {
+      "line": 31,
+      "keywords": [
+         "content",
+         "delet"
+      ],
+      "sentence": "If you update your public information on Twitter, such as by deleting a Tweet or deactivating your account, we will reflect your updated content on Twitter.com, Twitter for iOS, and Twitter for Android."
+   },
+   {
+      "line": 33,
+      "keywords": [
+         "content"
+      ],
+      "sentence": "We generally make this content available in limited quantities for free and charge licensing fees for large-scale access."
+   },
+   {
+      "line": 34,
+      "keywords": [
+         "data"
+      ],
+      "sentence": "We have standard terms that govern how this data can be used, and a compliance program to enforce these terms."
+   },
+   {
+      "line": 37,
+      "keywords": [
+         "data"
+      ],
+      "sentence": "For more information about how we make public data on Twitter available to the world, visit https://developer.twitter.com."
+   },
+   {
+      "line": 38,
+      "keywords": [
+         "account"
+      ],
+      "sentence": "Contact Information and Address Books: We use your contact information, such as your email address or phone number, to authenticate your account and keep it - and our services - secure, and to help prevent spam, fraud, and abuse."
+   },
+   {
+      "line": 39,
+      "keywords": [
+         "person",
+         "account"
+      ],
+      "sentence": "We also use contact information to personalize our services, enable certain account features (for example, for login verification or Twitter via SMS), and to send you information about our services."
+   },
+   {
+      "line": 41,
+      "keywords": [
+         "account"
+      ],
+      "sentence": "Twitter also uses your contact information to market to you as your country\u2019s laws allow, and to help others find your account if your settings permit, including through third-party services and client applications."
+   },
+   {
+      "line": 42,
+      "keywords": [
+         "control"
+      ],
+      "sentence": "You can use your settings for email and mobile notifications to control notifications you receive from Twitter."
+   },
+   {
+      "line": 45,
+      "keywords": [
+         "content"
+      ],
+      "sentence": "We also use this information to better recommend content to you and others."
+   },
+   {
+      "line": 46,
+      "keywords": [
+         "account"
+      ],
+      "sentence": "You can sign up for Periscope with an account from another service like Twitter, Google, or Facebook, or connect your Periscope account to these other services."
+   },
+   {
+      "line": 47,
+      "keywords": [
+         "content",
+         "account"
+      ],
+      "sentence": "If you do, we will use information from that service, including your email address, friends, or contacts list, to recommend other accounts or content to you or to recommend your account or content to others."
+   },
+   {
+      "line": 48,
+      "keywords": [
+         "control",
+         "account"
+      ],
+      "sentence": "You can control whether your Periscope account is discoverable by email through your Periscope settings."
+   },
+   {
+      "line": 49,
+      "keywords": [
+         "content"
+      ],
+      "sentence": "If you email us, we will keep the content of your message, your email address, and your contact information to respond to your request."
+   },
+   {
+      "line": 50,
+      "keywords": [
+         "control",
+         "direct"
+      ],
+      "sentence": "Direct Messages and Non-Public Communications: We provide certain features that let you communicate more privately or control who sees your content."
+   },
+   {
+      "line": 51,
+      "keywords": [
+         "direct",
+         "protect"
+      ],
+      "sentence": "For example, you can use Direct Messages to have non-public conversations on Twitter, protect your Tweets, or host private broadcasts on Periscope."
+   },
+   {
+      "line": 52,
+      "keywords": [
+         "direct",
+         "process"
+      ],
+      "sentence": "When you communicate with others by sending or receiving Direct Messages, we will store and process your communications and information related to them."
+   },
+   {
+      "line": 54,
+      "keywords": [
+         "content",
+         "protect"
+      ],
+      "sentence": "We also use information about whom you have communicated with and when (but not the content of those communications) to better understand the use of our services, to protect the safety and integrity of our platform, and to show more relevant content."
+   },
+   {
+      "line": 55,
+      "keywords": [
+         "content"
+      ],
+      "sentence": "We share the content of your Direct."
+   },
+   {
+      "line": 57,
+      "keywords": [
+         "content",
+         "direct"
+      ],
+      "sentence": "Note that if you interact in a way that would ordinarily be public with Twitter content shared with you via Direct Message, for instance by liking a Tweet, those interactions will be public."
+   },
+   {
+      "line": 58,
+      "keywords": [
+         "direct",
+         "delet",
+         "account"
+      ],
+      "sentence": "When you use features like Direct Messages to communicate, remember that recipients have their own copy of your communications on Twitter - even if you delete your copy of those messages from your account - which they may duplicate, store, or re-share."
+   },
+   {
+      "line": 60,
+      "keywords": [
+         "sensit",
+         "privaci",
+         "content",
+         "direct",
+         "control"
+      ],
+      "sentence": "How You Control the Information You Share with Us: Your Privacy and safety settings let you decide: \u25cf Whether your Tweets are publicly available on Twitter \u25cf Whether others can tag you in a photo \u25cf Whether you will be able to receive Direct Messages from anyone on Twitter or just your followers \u25cf Whether others can find you based on your email or phone number \u25cf Whether you upload your address book to Twitter for storage and use \u25cf When and where you may see sensitive content on Twitter \u25cf Whether you want to block or mute other Twitter accounts."
+   },
+   {
+      "line": 61,
+      "keywords": [
+         "third",
+         "parti"
+      ],
+      "sentence": "Additional Information We Receive About You We receive certain information when you use our services or other websites or mobile applications that include our content, and from third parties including advertisers."
+   },
+   {
+      "line": 62,
+      "keywords": [
+         "data"
+      ],
+      "sentence": "Like the information you share with us, we use the data below to operate our services."
+   },
+   {
+      "line": 63,
+      "keywords": [
+         "secur",
+         "account"
+      ],
+      "sentence": "Location Information: We require information about your signup and current location, which we get from signals such as your IP address or device settings, to securely and reliably set up and maintain your account and to provide our services to you."
+   },
+   {
+      "line": 64,
+      "keywords": [
+         "subject",
+         "content",
+         "person"
+      ],
+      "sentence": "Subject to your settings, we may collect, use, and store additional information about your location - such as your current precise position or places where you\u2019ve previously used Twitter - to operate or personalize our services including with more relevant content like local trends, stories, ads, and suggestions for people to follow."
+   },
+   {
+      "line": 70,
+      "keywords": [
+         "person",
+         "data"
+      ],
+      "sentence": "They may also collect other personal data from you, such as cookie identifiers or your IP address."
+   },
+   {
+      "line": 71,
+      "keywords": [
+         "data"
+      ],
+      "sentence": "Cookies: A cookie is a small piece of data that is stored on your computer or mobile device."
+   },
+   {
+      "line": 72,
+      "keywords": [
+         "data"
+      ],
+      "sentence": "Like many websites, we use cookies and similar technologies to collect additional website usage data and to operate our services."
+   },
+   {
+      "line": 76,
+      "keywords": [
+         "content",
+         "person",
+         "account"
+      ],
+      "sentence": "When your browser or device allows it, we use both session cookies and persistent cookies to better understand how you interact with our services, to monitor aggregate usage patterns, and to personalize and otherwise operate our services such as by providing account security, personalizing the content we show you including ads, and remembering your language preferences."
+   },
+   {
+      "line": 79,
+      "keywords": [
+         "content",
+         "log"
+      ],
+      "sentence": "Log Data: We receive information when you view content on or otherwise interact with our services, which we refer to as \u201cLog Data,\u201d even if you have not created an account."
+   },
+   {
+      "line": 80,
+      "keywords": [
+         "account"
+      ],
+      "sentence": "For example, when you visit our websites, sign into our services, interact with our email notifications, use your account to authenticate to a third-party service, or visit a thirdparty service that includes Twitter content, we may receive information about you."
+   },
+   {
+      "line": 81,
+      "keywords": [
+         "log",
+         "data"
+      ],
+      "sentence": "This Log Data includes information such as your IP address, browser type, operating system, the referring web page, pages visited, location, your mobile carrier, device information (including device and application IDs), search terms, and cookie information."
+   },
+   {
+      "line": 82,
+      "keywords": [
+         "log",
+         "data"
+      ],
+      "sentence": "We also receive Log Data when you click on, view, or interact with links on our services, including when you install another application through Twitter."
+   },
+   {
+      "line": 83,
+      "keywords": [
+         "log",
+         "data"
+      ],
+      "sentence": "We use Log Data to operate our services and ensure their secure, reliable, and robust performance."
+   },
+   {
+      "line": 84,
+      "keywords": [
+         "protect",
+         "data",
+         "content",
+         "log",
+         "secur",
+         "account"
+      ],
+      "sentence": "For example, we use Log Data to protect the security of accounts and to determine what content is popular on our services."
+   },
+   {
+      "line": 85,
+      "keywords": [
+         "content",
+         "log",
+         "third",
+         "data"
+      ],
+      "sentence": "We also use this data to improve the content we show you, including ads.. \fWe use information you provide to us and data we receive, including Log Data and data from third parties, to make inferences like what topics you may be interested in, how old you are, and what languages you speak."
+   },
+   {
+      "line": 86,
+      "keywords": [
+         "design",
+         "content",
+         "person"
+      ],
+      "sentence": "This helps us better design our services for you and personalize the content we show you, including ads."
+   },
+   {
+      "line": 87,
+      "keywords": [
+         "content",
+         "log",
+         "data"
+      ],
+      "sentence": "Twitter for Web Data: When you view our content on third-party websites that integrate Twitter content such as embedded timelines or Tweet buttons, we may receive Log Data that includes the web page you visited."
+   },
+   {
+      "line": 88,
+      "keywords": [
+         "protect"
+      ],
+      "sentence": "We use this information to better understand the use of our services, to protect the safety and integrity of our platform, and to show more relevant content, including ads."
+   },
+   {
+      "line": 90,
+      "keywords": [
+         "data"
+      ],
+      "sentence": "We do not collect this data from browsers that we believe to be located in the European Union or EFTA States."
+   },
+   {
+      "line": 92,
+      "keywords": [
+         "privaci"
+      ],
+      "sentence": "We use the information described in this Privacy Policy to help make our advertising more relevant to you, to measure its effectiveness, and to help recognize your devices to serve you ads on and off of Twitter."
+   },
+   {
+      "line": 93,
+      "keywords": [
+         "content"
+      ],
+      "sentence": "Our ad partners and affiliates share information with us such as browser cookie IDs, mobile device IDs, hashed email addresses, demographic or interest data, and content viewed or actions taken on a website or app."
+   },
+   {
+      "line": 96,
+      "keywords": [
+         "sensit"
+      ],
+      "sentence": "In addition, our ads policies prohibit advertisers from targeting ads based on categories that we consider sensitive or are prohibited by law, such as race, religion, politics, sex life, or health."
+   },
+   {
+      "line": 97,
+      "keywords": [
+         "privaci"
+      ],
+      "sentence": "Learn more about your privacy options for interest-based ads here and about how ads work on our services here."
+   },
+   {
+      "line": 98,
+      "keywords": [
+         "person",
+         "process",
+         "data"
+      ],
+      "sentence": "If you are an advertiser or a prospective advertiser, we process your personal data to help offer and provide our advertising services."
+   },
+   {
+      "line": 99,
+      "keywords": [
+         "data",
+         "privaci"
+      ],
+      "sentence": "You can update your data in your Twitter Ads dashboard or by contacting us directly as described in this Privacy Policy."
+   },
+   {
+      "line": 100,
+      "keywords": [
+         "access",
+         "process",
+         "data",
+         "person"
+      ],
+      "sentence": "Developers: If you access our APIs or developer portal, we process your personal data to help provide our services."
+   },
+   {
+      "line": 101,
+      "keywords": [
+         "third",
+         "data",
+         "privaci",
+         "content",
+         "corpor",
+         "parti"
+      ],
+      "sentence": "You can update your data by contacting us directly as described in this Privacy Policy.. \fOther Third Parties and Affiliates: We may receive information about you from third parties who are not our ad partners, such as others on Twitter, partners who help us evaluate the safety and quality of content on our platform, our corporate affiliates, and other services you link to your Twitter account."
+   },
+   {
+      "line": 102,
+      "keywords": [
+         "account"
+      ],
+      "sentence": "You may choose to connect your Twitter account to accounts on another service, and that other service may send us information about your account on that service."
+   },
+   {
+      "line": 105,
+      "keywords": [
+         "log",
+         "person",
+         "account"
+      ],
+      "sentence": "Personalizing Across Your Devices: When you log into Twitter on a browser or device, we will associate that browser or device with your account for purposes such as authentication, security, and personalization."
+   },
+   {
+      "line": 106,
+      "keywords": [
+         "subject",
+         "log",
+         "account"
+      ],
+      "sentence": "Subject to your settings, we may also associate your account with browsers or devices other than those you use to log into Twitter (or associate your logged-out device or browser with other browsers or devices)."
+   },
+   {
+      "line": 107,
+      "keywords": [
+         "person"
+      ],
+      "sentence": "We do this to operate and personalize our services."
+   },
+   {
+      "line": 108,
+      "keywords": [
+         "content"
+      ],
+      "sentence": "For example, if you visit websites with sports content on your laptop, we may show you sports-related ads on Twitter for Android."
+   },
+   {
+      "line": 109,
+      "keywords": [
+         "data",
+         "content",
+         "log",
+         "account",
+         "control",
+         "person"
+      ],
+      "sentence": "How You Control Additional Information We Receive: Your Twitter Personalization and data settings let you decide: \u25cf Whether we show you interest-based ads on and off Twitter \u25cf How we personalize your experience across devices \u25cf Whether we collect and use your precise location \u25cf Whether we personalize your experience based on where you\u2019ve been \u25cf Whether we keep track of the websites where you see Twitter content You can use Your Twitter data to review: \u25cb Advertisers who have included you in tailored audiences to serve you ads \u25cb Demographic and interest data about your account from our ads partners \u25cb Information that Twitter has inferred about you such as your age range, gender, languages, and interests We also provide a version of these tools on Twitter if you don\u2019t have a Twitter account, or if you\u2019re logged out of your account."
+   },
+   {
+      "line": 110,
+      "keywords": [
+         "account",
+         "log",
+         "data"
+      ],
+      "sentence": "This lets you see the data and settings for the logged out browser or device you are using, separate from any Twitter account that uses that browser or device."
+   },
+   {
+      "line": 111,
+      "keywords": [
+         "design",
+         "control",
+         "person"
+      ],
+      "sentence": "On Periscope, you can control whether we personalize your experience based on your watch history through your settings.. \fInformation We Share and Disclose As noted above, Twitter is designed to broadly and instantly disseminate information you share publicly through our services."
+   },
+   {
+      "line": 112,
+      "keywords": [
+         "subject",
+         "person"
+      ],
+      "sentence": "In the limited circumstances where we disclose your private personal data, we do so subject to your control, because it\u2019s necessary to operate our services, or because it\u2019s required by law."
+   },
+   {
+      "line": 113,
+      "keywords": [
+         "data",
+         "direct",
+         "access",
+         "account",
+         "person",
+         "consent",
+         "author"
+      ],
+      "sentence": "Sharing You Control: We share or disclose your personal data with your consent or at your direction, such as when you authorize a third-party web client or application to access your account or when you direct us to share your feedback with a business."
+   },
+   {
+      "line": 114,
+      "keywords": [
+         "direct",
+         "access",
+         "protect"
+      ],
+      "sentence": "If you\u2019ve shared information like Direct Messages or protected Tweets with someone else who accesses Twitter through a third-party service, keep in mind that the information may be shared with the third-party service."
+   },
+   {
+      "line": 115,
+      "keywords": [
+         "subject",
+         "third",
+         "data",
+         "person",
+         "parti"
+      ],
+      "sentence": "Subject to your settings, we also provide certain third parties with personal data to help us offer or operate our services."
+   },
+   {
+      "line": 117,
+      "keywords": [
+         "person"
+      ],
+      "sentence": "We also share device identifiers, along with the interests or other characteristics of a device or the person using it, to help partners decide whether to serve an ad to that device or to enable them to conduct marketing, brand analysis, interest-based advertising, or similar activities."
+   },
+   {
+      "line": 118,
+      "keywords": [
+         "control",
+         "person",
+         "data"
+      ],
+      "sentence": "You can learn more about these partnerships in our Help Center, and you can control whether Twitter shares your personal data in this way by using the \u201cShare your data with Twitter\u2019s business partners\u201d option in your Personalization and Data settings."
+   },
+   {
+      "line": 119,
+      "keywords": [
+         "control",
+         "data",
+         "privaci"
+      ],
+      "sentence": "(This setting does not control sharing described elsewhere in our Privacy Policy, such as when we share data with our service providers.)"
+   },
+   {
+      "line": 120,
+      "keywords": [
+         "person",
+         "consent"
+      ],
+      "sentence": "The information we share with these partners does not include your name, email address, phone number, or Twitter username, but some of these partnerships allow the information we share to be linked to other personal information if the partner gets your consent first."
+   },
+   {
+      "line": 123,
+      "keywords": [
+         "subject",
+         "third",
+         "data",
+         "privaci",
+         "secur",
+         "person",
+         "parti"
+      ],
+      "sentence": "We may share your private personal data with such service providers subject to obligations consistent with this Privacy Policy and any other appropriate confidentiality and security measures, and on the condition that the third parties use your private personal data only on our behalf and pursuant to our instructions."
+   },
+   {
+      "line": 124,
+      "keywords": [
+         "process"
+      ],
+      "sentence": "We share your payment information with payment services providers to process payments; prevent, detect, and investigate fraud or other prohibited activities; facilitate dispute."
+   },
+   {
+      "line": 126,
+      "keywords": [
+         "protect",
+         "data",
+         "privaci",
+         "content",
+         "account",
+         "control",
+         "person",
+         "right"
+      ],
+      "sentence": "Law, Harm, and the Public Interest: Notwithstanding anything to the contrary in this Privacy Policy or controls we may otherwise offer to you, we may preserve, use, or disclose your personal data if we believe that it is reasonably necessary to comply with a law, regulation, legal process, or governmental request; to protect the safety of any person; to protect the safety or integrity of our platform, including to help prevent spam, abuse, or malicious actors on our services, or to explain why we have removed content or accounts from our services; to address fraud, security, or technical issues; or to protect our rights or property or the rights or property of those who use our services."
+   },
+   {
+      "line": 127,
+      "keywords": [
+         "person",
+         "object",
+         "third",
+         "privaci"
+      ],
+      "sentence": "However, nothing in this Privacy Policy is intended to limit any legal defenses or objections that you may have to a third party\u2019s, including a government\u2019s, request to disclose your personal data."
+   },
+   {
+      "line": 128,
+      "keywords": [
+         "person",
+         "data"
+      ],
+      "sentence": "Affiliates and Change of Ownership: In the event that we are involved in a bankruptcy, merger, acquisition, reorganization, or sale of assets, your personal data may be sold or transferred as part of that transaction."
+   },
+   {
+      "line": 129,
+      "keywords": [
+         "person",
+         "data",
+         "privaci"
+      ],
+      "sentence": "This Privacy Policy will apply to your personal data as transferred to the new entity."
+   },
+   {
+      "line": 130,
+      "keywords": [
+         "corpor",
+         "person",
+         "data"
+      ],
+      "sentence": "We may also disclose personal data about you to our corporate affiliates in order to help operate our services and our affiliates\u2019 services, including the delivery of ads."
+   },
+   {
+      "line": 132,
+      "keywords": [
+         "manag",
+         "control",
+         "person",
+         "data"
+      ],
+      "sentence": "Managing Your Personal Information with Us You control the personal data you share with us."
+   },
+   {
+      "line": 133,
+      "keywords": [
+         "access",
+         "data"
+      ],
+      "sentence": "You can access or rectify this data at any time."
+   },
+   {
+      "line": 135,
+      "keywords": [
+         "consent",
+         "data"
+      ],
+      "sentence": "We also provide you tools to object, restrict, or withdraw consent where applicable for the use of data you have provided to Twitter."
+   },
+   {
+      "line": 136,
+      "keywords": [
+         "data",
+         "portabl"
+      ],
+      "sentence": "And we make the data you shared through our services portable and provide easy ways for you to contact us."
+   },
+   {
+      "line": 137,
+      "keywords": [
+         "data",
+         "access",
+         "account",
+         "person"
+      ],
+      "sentence": "Accessing or Rectifying Your Personal Data: If you have registered an account on Twitter, we provide you with tools and account settings to access, correct, delete, or modify the personal data you provided to us and associated with your account."
+   },
+   {
+      "line": 138,
+      "keywords": [
+         "account"
+      ],
+      "sentence": "You can download certain account information, including your Tweets, by following the instructions here."
+   },
+   {
+      "line": 140,
+      "keywords": [
+         "person",
+         "account"
+      ],
+      "sentence": "of your personal data, and download your account information, by following the instructions here."
+   },
+   {
+      "line": 141,
+      "keywords": [
+         "access",
+         "data"
+      ],
+      "sentence": "You can learn more about the interests we have inferred about you in Your Twitter Data and request access to additional information here."
+   },
+   {
+      "line": 142,
+      "keywords": [
+         "log",
+         "data"
+      ],
+      "sentence": "Deletion: We keep Log Data for a maximum of 18 months."
+   },
+   {
+      "line": 143,
+      "keywords": [
+         "account"
+      ],
+      "sentence": "If you follow the instructions here (or for Periscope here), your account will be deactivated and then deleted."
+   },
+   {
+      "line": 145,
+      "keywords": [
+         "account"
+      ],
+      "sentence": "For up to 30 days after deactivation it is still possible to restore your Twitter account if it was accidentally or wrongfully deactivated."
+   },
+   {
+      "line": 146,
+      "keywords": [
+         "delet",
+         "third",
+         "parti",
+         "profil"
+      ],
+      "sentence": "Keep in mind that search engines and other third parties may still retain copies of your public information, like your profile information and public Tweets, even after you have deleted the information from our services or deactivated your account."
+   },
+   {
+      "line": 148,
+      "keywords": [
+         "manag",
+         "log",
+         "account",
+         "privaci"
+      ],
+      "sentence": "Object, Restrict, or Withdraw Consent: When you are logged into your Twitter account, you can manage your privacy settings and other account features here at any time."
+   },
+   {
+      "line": 151,
+      "keywords": [
+         "privaci"
+      ],
+      "sentence": "Additional Information or Assistance: Thoughts or questions about this Privacy Policy?"
+   },
+   {
+      "line": 153,
+      "keywords": [
+         "offic",
+         "protect",
+         "data",
+         "privaci",
+         "control",
+         "person"
+      ],
+      "sentence": "If you live in the United States, the data controller responsible for your personal data is Twitter, Inc. with an address of: Twitter, Inc. Attn: Privacy Policy Inquiry 1355 Market Street, Suite 900 San Francisco, CA 94103 If you live outside the United States, the data controller is Twitter International Company, with an address of: Twitter International Company Attn: Data Protection Officer One Cumberland Place, Fenian Street."
+   },
+   {
+      "line": 154,
+      "keywords": [
+         "offic",
+         "data",
+         "protect"
+      ],
+      "sentence": "Dublin 2, D02 AX07 IRELAND If you are located in the European Union or EFTA States, you can confidentially contact Twitter\u2019s Data Protection Officer here."
+   },
+   {
+      "line": 155,
+      "keywords": [
+         "protect",
+         "data",
+         "supervisori",
+         "right",
+         "author"
+      ],
+      "sentence": "If you wish to raise a concern about our use of your information (and without prejudice to any other rights you may have), you have the right to do so with your local supervisory authority or Twitter International Company\u2019s lead supervisory authority, the Irish Data Protection Commission."
+   },
+   {
+      "line": 156,
+      "keywords": [
+         "direct"
+      ],
+      "sentence": "You can find their contact details here.. Children and Our Services Our services are not directed to children, and you may not use our services if you are under the age of 13."
+   },
+   {
+      "line": 157,
+      "keywords": [
+         "process",
+         "person",
+         "consent",
+         "data"
+      ],
+      "sentence": "You must also be old enough to consent to the processing of your personal data in your country (in some countries we may allow your parent or guardian to do so on your behalf)."
+   },
+   {
+      "line": 158,
+      "keywords": [
+         "shield",
+         "privaci"
+      ],
+      "sentence": "You must be at least 16 years of age to use Periscope.. Our Global Operations and Privacy Shield To bring you our services, we operate globally."
+   },
+   {
+      "line": 159,
+      "keywords": [
+         "data",
+         "author"
+      ],
+      "sentence": "Where the laws of your country allow you to do so, you authorize us to transfer, store, and use your data in the United States, Ireland, and any other country where we operate."
+   },
+   {
+      "line": 160,
+      "keywords": [
+         "protect",
+         "data",
+         "privaci",
+         "access",
+         "rule",
+         "person",
+         "author"
+      ],
+      "sentence": "In some of the countries to which we transfer personal data, the privacy and data protection laws and rules regarding when government authorities may access data may vary from those of your country."
+   },
+   {
+      "line": 161,
+      "keywords": [
+         "data"
+      ],
+      "sentence": "Learn more about our global operations and data transfer here."
+   },
+   {
+      "line": 162,
+      "keywords": [
+         "protect",
+         "subject",
+         "data",
+         "privaci",
+         "shield",
+         "person",
+         "right"
+      ],
+      "sentence": "When we transfer personal data outside of the European Union or EFTA States, we ensure an adequate level of protection for the rights of data subjects based on the adequacy of the receiving country\u2019s data protection laws, contractual obligations placed on the recipient of the data (model clauses may be requested by inquiry as described below), or EU-US and Swiss-US Privacy Shield principles."
+   },
+   {
+      "line": 163,
+      "keywords": [
+         "person",
+         "shield",
+         "data",
+         "privaci"
+      ],
+      "sentence": "Twitter, Inc. complies with the EU-US and Swiss-US Privacy Shield principles (the \u201cPrinciples\u201d) regarding the collection, use, sharing, and retention of personal data from the European Union and Switzerland, as described in our EU-US Privacy Shield certification and Swiss-US Privacy Shield certification."
+   },
+   {
+      "line": 164,
+      "keywords": [
+         "privaci"
+      ],
+      "sentence": "If you have a Privacy Shield-related complaint, please contact us here."
+   },
+   {
+      "line": 165,
+      "keywords": [
+         "subject",
+         "shield",
+         "author",
+         "privaci"
+      ],
+      "sentence": "As part of our participation in Privacy Shield, if you have a dispute with us about our adherence to the Principles, we will seek to resolve it through our internal complaint resolution process, alternatively through the independent dispute resolution body JAMS, and under certain conditions, through the Privacy Shield arbitration process.. \fPrivacy Shield participants are subject to the investigatory and enforcement powers of the US Federal Trade Commission and other authorized statutory bodies."
+   },
+   {
+      "line": 166,
+      "keywords": [
+         "person",
+         "third",
+         "data",
+         "parti"
+      ],
+      "sentence": "Under certain circumstances, participants may be liable for the transfer of personal data from the EU or Switzerland to third parties outside the EU and Switzerland."
+   },
+   {
+      "line": 167,
+      "keywords": [
+         "shield",
+         "privaci"
+      ],
+      "sentence": "Learn more about the EU-US Privacy Shield and Swiss-US Privacy Shield here.. Changes to This Privacy Policy We may revise this Privacy Policy from time to time."
+   },
+   {
+      "line": 168,
+      "keywords": [
+         "person",
+         "process",
+         "data"
+      ],
+      "sentence": "The most current version of the policy will govern our processing of your personal data and will always be at https://twitter.com/privacy."
+   },
+   {
+      "line": 170,
+      "keywords": [
+         "access",
+         "privaci"
+      ],
+      "sentence": "By continuing to access or use the Services after those changes become effective, you agree to be bound by the revised Privacy Policy."
+   },
+   {
+      "line": 171,
+      "keywords": [
+         "privaci"
+      ],
+      "sentence": "Effective: May 25, 2018 Archive of Previous Privacy Policies."
    }
 ]
