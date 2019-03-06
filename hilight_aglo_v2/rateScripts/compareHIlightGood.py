@@ -36,17 +36,20 @@ class Criteria:
 		self.subCriterias.append(SubCriteria(" ", 4, " "))
 		self.subCriterias.clear()
 		self.nameCriteria = name
-		self.gradeCriteria = -6
+		self.gradeCriteria = -6 # -6 -> we don't know the grade
+		self.lenSubCriteriaOk = 0
 	def addSubCriteria(self, subCriteria):
 		self.subCriterias.append(subCriteria)
-		if(self.gradeCriteria != -100): # if = -100 -> ignore -> we don't know
+		if(subCriteria.gradeSubCriteria != -100): # if = -100 -> ignore -> we don't know
+			self.lenSubCriteriaOk+=1
 			if(self.gradeCriteria == -6): #if first subcriteria added
 				self.gradeCriteria = subCriteria.gradeSubCriteria
 			else:
 				total = 0
 				for sub in self.subCriterias:
-					total += sub.gradeSubCriteria
-				self.gradeCriteria = total/ len(self.subCriterias)
+					if(sub.gradeSubCriteria != -100):
+						total += sub.gradeSubCriteria
+						self.gradeCriteria = total / self.lenSubCriteriaOk
 	
 	def displayCriteria(self):
 		print("\n")
