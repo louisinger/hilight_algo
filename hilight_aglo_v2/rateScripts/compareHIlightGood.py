@@ -58,140 +58,177 @@ class Criteria:
 			sub.toString()
 #################################################################################################
 
-criterias = [] # length 22
-criterias.append(Criteria("Clarification on the purpose of the collection"))
-criterias.append(Criteria("Clarification on the collection process"))
-criterias.append(Criteria("Mention of the purpose"))
-criterias.append(Criteria("Conservation"))
-criterias.append(Criteria("Profiling"))
-criterias.append(Criteria("Identity of the controller"))
-criterias.append(Criteria("Carrying out a processing operation by a subcontractor"))
-criterias.append(Criteria("Disclosure of data to third parties"))
-criterias.append(Criteria("Mention of the identity of third parties"))
-criterias.append(Criteria("Mention of the purpose of the transfer"))
-criterias.append(Criteria("Right of opposition"))
-criterias.append(Criteria("Right to access"))
-criterias.append(Criteria("Right of rectification "))
-criterias.append(Criteria("Right to erase"))
-criterias.append(Criteria("Right to portability "))
-criterias.append(Criteria("Information on the existence of cookies and other tracking tools"))
-criterias.append(Criteria("Mention of the existence of links with social networks or other sites "))
-criterias.append(Criteria("Consent / Acceptance"))
-criterias.append(Criteria("Scope of consent"))
-criterias.append(Criteria("Information on the unilateral amendment of the charter"))
-criterias.append(Criteria("Consent to the amendment"))
-criterias.append(Criteria("Safety and security"))
-criterias.append(Criteria("Measures taken to ensure security"))
-#################################################################################################
+def initModel():
+	criterias = [] # length 22
+	criterias.append(Criteria("Clarification on the purpose of the collection"))
+	criterias.append(Criteria("Clarification on the collection process"))
+	criterias.append(Criteria("Mention of the purpose"))
+	criterias.append(Criteria("Conservation"))
+	criterias.append(Criteria("Profiling"))
+	criterias.append(Criteria("Identity of the controller"))
+	criterias.append(Criteria("Carrying out a processing operation by a subcontractor"))
+	criterias.append(Criteria("Disclosure of data to third parties"))
+	criterias.append(Criteria("Mention of the identity of third parties"))
+	criterias.append(Criteria("Mention of the purpose of the transfer"))
+	criterias.append(Criteria("Right of opposition"))
+	criterias.append(Criteria("Right to access"))
+	criterias.append(Criteria("Right of rectification "))
+	criterias.append(Criteria("Right to erase"))
+	criterias.append(Criteria("Right to portability "))
+	criterias.append(Criteria("Information on the existence of cookies and other tracking tools"))
+	criterias.append(Criteria("Mention of the existence of links with social networks or other sites "))
+	criterias.append(Criteria("Consent / Acceptance"))
+	criterias.append(Criteria("Scope of consent"))
+	criterias.append(Criteria("Information on the unilateral amendment of the charter"))
+	criterias.append(Criteria("Consent to the amendment"))
+	criterias.append(Criteria("Safety and security"))
+	criterias.append(Criteria("Measures taken to ensure security"))
+	#################################################################################################
 
 
-dir = os.path.dirname(__file__)
-filename = os.path.join(dir, 'GrilleHiLights-Edited-v1-English-test.csv')
-#filename = os.path.join(dir, 'GrilleHiLights-Edited-v1-French.csv')
+	dir = os.path.dirname(__file__)
+	filename = os.path.join(dir, 'GrilleHiLights-Edited-v1-English-test.csv')
+	#filename = os.path.join(dir, 'GrilleHiLights-Edited-v1-French.csv')
 
-# Read data from file 'filename.csv' 
-# (in the same directory that your python process is based)
-# Control delimiters, rows, column names with read_csv (see later) 
-data = pd.read_csv(filename) 
+	# Read data from file 'filename.csv' 
+	# (in the same directory that your python process is based)
+	# Control delimiters, rows, column names with read_csv (see later) 
+	data = pd.read_csv(filename) 
+
+	dictVariableSubVariable=[]
+
+	cpt = 0
+	for subVariable in data['Sous-variables']:
+		subVariable = str(subVariable)
+		res = subVariable.split(" ", 1)
+		if(len(res) > 1):
+			tempstring = res[1]
+			# print(data['Variable'][cpt] +" " +tempstring)
+			dictVariableSubVariable.append(str(data['u'][cpt]) +" " +tempstring)
+		cpt+=1
+
+	# print("longueur sub variable" + str(len(dictVariableSubVariable)))
+		
+	# Tokenize the docs
+	tokenized_list = [simple_preprocess(doc) for doc in dictVariableSubVariable]
+
+	# Create the Corpus
+	mydict = corpora.Dictionary()
+	mycorpus = [mydict.doc2bow(doc, allow_update=True) for doc in tokenized_list]
+
+	#build model
+	tfidf = models.TfidfModel(mycorpus)
+	index = similarities.SparseMatrixSimilarity(tfidf[mycorpus], num_features=500)
 
 
-dictVariableSubVariable=[]
 
-cpt = 0
-for subVariable in data['Sous-variables']:
-	subVariable = str(subVariable)
-	res = subVariable.split(" ", 1)
-	if(len(res) > 1):
-		tempstring = res[1]
+	dictBad = []
+	dictOk = []
+	dictGood = []
+
+	############################### bad ###############################
+	for phrase in data['-1']:
+		phrase = str(phrase)
+		if(phrase==' ' or phrase=='nan'):
+			phrase = "None"
 		# print(data['Variable'][cpt] +" " +tempstring)
-		dictVariableSubVariable.append(str(data['u'][cpt]) +" " +tempstring)
-	cpt+=1
+		dictBad.append(phrase)
 
-# print("longueur sub variable" + str(len(dictVariableSubVariable)))
+	# Tokenize the docs
+	tokenized_list_bad = [simple_preprocess(doc) for doc in dictBad]
+
+	# Create the Corpus
+	mycorpus_bad = [mydict.doc2bow(doc, allow_update=True) for doc in tokenized_list_bad]
+
+	#build model
+	tfidf_bad = models.TfidfModel(mycorpus_bad)
+	index_bad = similarities.SparseMatrixSimilarity(tfidf_bad[mycorpus_bad], num_features=1000)
+
+
+	############################### ok ###############################
+	for phrase2 in data['0']:
+		phrase2 = str(phrase2)
+		if(phrase2==' ' or phrase2=='nan'):
+			phrase2 = "None"
+		# print(data['Variable'][cpt] +" " +tempstring)
+		dictOk.append(phrase2)
+
+	# Tokenize the docs
+	tokenized_list_Ok = [simple_preprocess(doc) for doc in dictOk]
+
+	# Create the Corpus
+	mycorpus_Ok = [mydict.doc2bow(doc, allow_update=True) for doc in tokenized_list_Ok]
+
+	#build model
+	tfidf_Ok = models.TfidfModel(mycorpus_Ok)
+	index_oK = similarities.SparseMatrixSimilarity(tfidf_Ok[mycorpus_Ok], num_features=1000)
+
+	############################### good ###############################
+	for phrase3 in data['1']:
+		phrase3 = str(phrase3)
+		if(phrase3==' ' or phrase3=='nan'):
+			phrase3 = "None"
+		# print(data['Variable'][cpt] +" " +tempstring)
+		dictGood.append(phrase3)
+
+	# Tokenize the docs
+	tokenized_list_good = [simple_preprocess(doc) for doc in dictGood]
+
+	# Create the Corpus
+	mycorpus_good = [mydict.doc2bow(doc, allow_update=True) for doc in tokenized_list_good]
+
+	#build model
+	tfidf_good = models.TfidfModel(mycorpus_good)
+	index_good = similarities.SparseMatrixSimilarity(tfidf_good[mycorpus_good], num_features=1000)
 	
-# Tokenize the docs
-tokenized_list = [simple_preprocess(doc) for doc in dictVariableSubVariable]
+	####################################### json processing
+	#fileName = 'AI prototype v1.0_useful_sentence_full.json'
 
-# Create the Corpus
-mydict = corpora.Dictionary()
-mycorpus = [mydict.doc2bow(doc, allow_update=True) for doc in tokenized_list]
+	fileName = 'goodJson.json'
 
-#build model
-tfidf = models.TfidfModel(mycorpus)
-index = similarities.SparseMatrixSimilarity(tfidf[mycorpus], num_features=500)
+	###########################################
+	file2 = os.path.join(dir, fileName)
 
+	with open(file2) as jsonpolicy:
+			dataJsonPolicy = json.load(jsonpolicy)
 
-
-dictBad = []
-dictOk = []
-dictGood = []
-
-############################### bad ###############################
-for phrase in data['-1']:
-	phrase = str(phrase)
-	if(phrase==' ' or phrase=='nan'):
-		phrase = "None"
-	# print(data['Variable'][cpt] +" " +tempstring)
-	dictBad.append(phrase)
-
-# Tokenize the docs
-tokenized_list_bad = [simple_preprocess(doc) for doc in dictBad]
-
-# Create the Corpus
-mycorpus_bad = [mydict.doc2bow(doc, allow_update=True) for doc in tokenized_list_bad]
-
-#build model
-tfidf_bad = models.TfidfModel(mycorpus_bad)
-index_bad = similarities.SparseMatrixSimilarity(tfidf_bad[mycorpus_bad], num_features=1000)
+	keysTable = []
+	for key in dataJsonPolicy:
+		totalkey = ""
+		for keys in key["keywords"]:
+			##total key from the json
+			totalkey += keys + " "
+		keysTable.append(totalkey)
 
 
-############################### ok ###############################
-for phrase2 in data['0']:
-	phrase2 = str(phrase2)
-	if(phrase2==' ' or phrase2=='nan'):
-		phrase2 = "None"
-	# print(data['Variable'][cpt] +" " +tempstring)
-	dictOk.append(phrase2)
+	j=0
+	for st in keysTable:
+		if(st == ''):
+			keysTable[j] ="None"
+		j+=1
 
-# Tokenize the docs
-tokenized_list_Ok = [simple_preprocess(doc) for doc in dictOk]
+	# Tokenize the docs
+	tokenized_list_keyPrivacy = [simple_preprocess(doc) for doc in keysTable]
 
-# Create the Corpus
-mycorpus_Ok = [mydict.doc2bow(doc, allow_update=True) for doc in tokenized_list_Ok]
+	# Create the Corpus
+	mycorpus_keyPrivacy = [mydict.doc2bow(doc, allow_update=True) for doc in tokenized_list_keyPrivacy]
 
-#build model
-tfidf_Ok = models.TfidfModel(mycorpus_Ok)
-index_oK = similarities.SparseMatrixSimilarity(tfidf_Ok[mycorpus_Ok], num_features=1000)
+	#build model
+	tfidf_keyPrivacy = models.TfidfModel(mycorpus_keyPrivacy)
+	index_keyPrivacy = similarities.SparseMatrixSimilarity(tfidf_keyPrivacy[mycorpus_keyPrivacy], num_features=1000)
 
-############################### good ###############################
-for phrase3 in data['1']:
-	phrase3 = str(phrase3)
-	if(phrase3==' ' or phrase3=='nan'):
-		phrase3 = "None"
-	# print(data['Variable'][cpt] +" " +tempstring)
-	dictGood.append(phrase3)
-
-# Tokenize the docs
-tokenized_list_good = [simple_preprocess(doc) for doc in dictGood]
-
-# Create the Corpus
-mycorpus_good = [mydict.doc2bow(doc, allow_update=True) for doc in tokenized_list_good]
-
-#build model
-tfidf_good = models.TfidfModel(mycorpus_good)
-index_good = similarities.SparseMatrixSimilarity(tfidf_good[mycorpus_good], num_features=1000)
 
 
 
 
 #return a vector from the words given
-def vectoriceText(textToVector):
+def vectoriceText(textToVector, dictionarydoc2bow):
 	ToTest=[]
 	ToTest.append(textToVector)
 	# Tokenize the docs
 	tokenized_list_test_privacy = [simple_preprocess(doc) for doc in ToTest]
 	
-	mycorpus_test_privacy = [mydict.doc2bow(doc, allow_update=True) for doc in tokenized_list_test_privacy]
+	mycorpus_test_privacy = [dictionarydoc2bow.doc2bow(doc, allow_update=True) for doc in tokenized_list_test_privacy]
 	
 	# print("********* vector value *********")
 	# print(mycorpus_test_privacy)
@@ -241,47 +278,168 @@ def getSimilaritiesWithNumber(simVector, numberToCompare):
 	# print(simVector)
 	return(simVector[0][numberToCompare])
 	
-	
-
-
-####################################### json processing
-#fileName = 'AI prototype v1.0_useful_sentence_full.json'
-
-fileName = 'goodJson.json'
-
-###########################################
-file2 = os.path.join(dir, fileName)
-
-with open(file2) as jsonpolicy:
-		dataJsonPolicy = json.load(jsonpolicy)
-
-keysTable = []
-for key in dataJsonPolicy:
-	totalkey = ""
-	for keys in key["keywords"]:
-		##total key from the json
-		totalkey += keys + " "
-	keysTable.append(totalkey)
-
-
-j=0
-for st in keysTable:
-	if(st == ''):
-		keysTable[j] ="None"
-	j+=1
-
-# Tokenize the docs
-tokenized_list_keyPrivacy = [simple_preprocess(doc) for doc in keysTable]
-
-# Create the Corpus
-mycorpus_keyPrivacy = [mydict.doc2bow(doc, allow_update=True) for doc in tokenized_list_keyPrivacy]
-
-#build model
-tfidf_keyPrivacy = models.TfidfModel(mycorpus_keyPrivacy)
-index_keyPrivacy = similarities.SparseMatrixSimilarity(tfidf_keyPrivacy[mycorpus_keyPrivacy], num_features=1000)
-
 
 def getPrivacyGradesPerCriter(ParfileName):
+	# initModel()
+	criterias = [] # length 22
+	criterias.append(Criteria("Clarification on the purpose of the collection"))
+	criterias.append(Criteria("Clarification on the collection process"))
+	criterias.append(Criteria("Mention of the purpose"))
+	criterias.append(Criteria("Conservation"))
+	criterias.append(Criteria("Profiling"))
+	criterias.append(Criteria("Identity of the controller"))
+	criterias.append(Criteria("Carrying out a processing operation by a subcontractor"))
+	criterias.append(Criteria("Disclosure of data to third parties"))
+	criterias.append(Criteria("Mention of the identity of third parties"))
+	criterias.append(Criteria("Mention of the purpose of the transfer"))
+	criterias.append(Criteria("Right of opposition"))
+	criterias.append(Criteria("Right to access"))
+	criterias.append(Criteria("Right of rectification "))
+	criterias.append(Criteria("Right to erase"))
+	criterias.append(Criteria("Right to portability "))
+	criterias.append(Criteria("Information on the existence of cookies and other tracking tools"))
+	criterias.append(Criteria("Mention of the existence of links with social networks or other sites "))
+	criterias.append(Criteria("Consent / Acceptance"))
+	criterias.append(Criteria("Scope of consent"))
+	criterias.append(Criteria("Information on the unilateral amendment of the charter"))
+	criterias.append(Criteria("Consent to the amendment"))
+	criterias.append(Criteria("Safety and security"))
+	criterias.append(Criteria("Measures taken to ensure security"))
+	#################################################################################################
+
+
+	dir = os.path.dirname(__file__)
+	filename = os.path.join(dir, 'GrilleHiLights-Edited-v1-English-test.csv')
+	#filename = os.path.join(dir, 'GrilleHiLights-Edited-v1-French.csv')
+
+	# Read data from file 'filename.csv' 
+	# (in the same directory that your python process is based)
+	# Control delimiters, rows, column names with read_csv (see later) 
+	data = pd.read_csv(filename) 
+
+	dictVariableSubVariable=[]
+
+	cpt = 0
+	for subVariable in data['Sous-variables']:
+		subVariable = str(subVariable)
+		res = subVariable.split(" ", 1)
+		if(len(res) > 1):
+			tempstring = res[1]
+			# print(data['Variable'][cpt] +" " +tempstring)
+			dictVariableSubVariable.append(str(data['u'][cpt]) +" " +tempstring)
+		cpt+=1
+
+	# print("longueur sub variable" + str(len(dictVariableSubVariable)))
+		
+	# Tokenize the docs
+	tokenized_list = [simple_preprocess(doc) for doc in dictVariableSubVariable]
+
+	# Create the Corpus
+	mydict = corpora.Dictionary()
+	mycorpus = [mydict.doc2bow(doc, allow_update=True) for doc in tokenized_list]
+
+	#build model
+	tfidf = models.TfidfModel(mycorpus)
+	index = similarities.SparseMatrixSimilarity(tfidf[mycorpus], num_features=500)
+
+
+
+	dictBad = []
+	dictOk = []
+	dictGood = []
+
+	############################### bad ###############################
+	for phrase in data['-1']:
+		phrase = str(phrase)
+		if(phrase==' ' or phrase=='nan'):
+			phrase = "None"
+		# print(data['Variable'][cpt] +" " +tempstring)
+		dictBad.append(phrase)
+
+	# Tokenize the docs
+	tokenized_list_bad = [simple_preprocess(doc) for doc in dictBad]
+
+	# Create the Corpus
+	mycorpus_bad = [mydict.doc2bow(doc, allow_update=True) for doc in tokenized_list_bad]
+
+	#build model
+	tfidf_bad = models.TfidfModel(mycorpus_bad)
+	index_bad = similarities.SparseMatrixSimilarity(tfidf_bad[mycorpus_bad], num_features=1000)
+
+
+	############################### ok ###############################
+	for phrase2 in data['0']:
+		phrase2 = str(phrase2)
+		if(phrase2==' ' or phrase2=='nan'):
+			phrase2 = "None"
+		# print(data['Variable'][cpt] +" " +tempstring)
+		dictOk.append(phrase2)
+
+	# Tokenize the docs
+	tokenized_list_Ok = [simple_preprocess(doc) for doc in dictOk]
+
+	# Create the Corpus
+	mycorpus_Ok = [mydict.doc2bow(doc, allow_update=True) for doc in tokenized_list_Ok]
+
+	#build model
+	tfidf_Ok = models.TfidfModel(mycorpus_Ok)
+	index_oK = similarities.SparseMatrixSimilarity(tfidf_Ok[mycorpus_Ok], num_features=1000)
+
+	############################### good ###############################
+	for phrase3 in data['1']:
+		phrase3 = str(phrase3)
+		if(phrase3==' ' or phrase3=='nan'):
+			phrase3 = "None"
+		# print(data['Variable'][cpt] +" " +tempstring)
+		dictGood.append(phrase3)
+
+	# Tokenize the docs
+	tokenized_list_good = [simple_preprocess(doc) for doc in dictGood]
+
+	# Create the Corpus
+	mycorpus_good = [mydict.doc2bow(doc, allow_update=True) for doc in tokenized_list_good]
+
+	#build model
+	tfidf_good = models.TfidfModel(mycorpus_good)
+	index_good = similarities.SparseMatrixSimilarity(tfidf_good[mycorpus_good], num_features=1000)
+	
+	####################################### json processing
+	#fileName = 'AI prototype v1.0_useful_sentence_full.json'
+
+	fileName = 'goodJson.json'
+
+	###########################################
+	file2 = os.path.join(dir, fileName)
+
+	with open(file2) as jsonpolicy:
+			dataJsonPolicy = json.load(jsonpolicy)
+
+	keysTable = []
+	for key in dataJsonPolicy:
+		totalkey = ""
+		for keys in key["keywords"]:
+			##total key from the json
+			totalkey += keys + " "
+		keysTable.append(totalkey)
+
+
+	j=0
+	for st in keysTable:
+		if(st == ''):
+			keysTable[j] ="None"
+		j+=1
+
+	# Tokenize the docs
+	tokenized_list_keyPrivacy = [simple_preprocess(doc) for doc in keysTable]
+
+	# Create the Corpus
+	mycorpus_keyPrivacy = [mydict.doc2bow(doc, allow_update=True) for doc in tokenized_list_keyPrivacy]
+
+	#build model
+	tfidf_keyPrivacy = models.TfidfModel(mycorpus_keyPrivacy)
+	index_keyPrivacy = similarities.SparseMatrixSimilarity(tfidf_keyPrivacy[mycorpus_keyPrivacy], num_features=1000)
+
+	########################################################
 	file2 = os.path.join(dir, ParfileName)
 
 	with open(file2) as jsonpolicy:
@@ -323,7 +481,7 @@ def getPrivacyGradesPerCriter(ParfileName):
 		listScore.append(0)
 		
 		#text2Vec for the subCriteria
-		subvariableVectorized = vectoriceText(subvariable)
+		subvariableVectorized = vectoriceText(subvariable, mydict)
 		
 		#get the vector similarities between subvariable and keys of privacy extracted from (json) 
 		simVector = getSimilaritiesFromVectorToModel(index_keyPrivacy, tfidf_keyPrivacy, subvariableVectorized)
@@ -339,7 +497,7 @@ def getPrivacyGradesPerCriter(ParfileName):
 		for key in dataJsonPolicy:
 			if(j == idHihestSim):
 				# !comment phrase to compare -> key[sentence]
-				phraseVectorized = vectoriceText(key["sentence"])
+				phraseVectorized = vectoriceText(key["sentence"],mydict)
 				
 				# !comment bad
 				similaritiesBad = getSimilaritiesFromVectorToModel(index_bad, tfidf_bad, phraseVectorized)
@@ -463,29 +621,16 @@ def getPrivacyGradesPerCriter(ParfileName):
 			# print(criterias[22].displayCriteria())
 			
 		subCriteriaIndex+=1
+	for c in criterias:
+		c.displayCriteria()
 	return listScore
-					
-# def putTableInForm(tabResult):
-	# lengthCriterias =[6,4,8,2,2,8,3,5,1,5,1,1,1,1,3,7,1,3,3,4,3,2,6]
-	# indexTabCriter = 0
-	# cptTotal=0
-	# print("len tab Result "+str(lengthCriterias[i]))
-	# for i in range(0,len(criterias)):
-		# for j in range(0,lengthCriterias[i]):
-			# print(j)
-			# subCriteria = SubCriteria("name", tabResult[cptTotal], "sentence")
-			# criterias[i].addSubCriteria(subCriteria)
-			# cptTotal += 1
-		# break	
+
 
 
 #print(getPrivacyGradesPerCriter(fileName))
 #print(getPrivacyGradesPerCriter(fileName))
-getPrivacyGradesPerCriter(fileName)
+getPrivacyGradesPerCriter("goodJson.json")
 
-
-for c in criterias:
-	c.displayCriteria()
 	
 
 		
