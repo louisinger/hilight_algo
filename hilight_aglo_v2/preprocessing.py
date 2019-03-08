@@ -5,6 +5,7 @@ Created on 9 dï¿½c. 2018
 
 @author: axelc & victorc
 '''
+#nltk.download()
 import sys
 import json
 import nltk.tokenize
@@ -18,7 +19,7 @@ from nltk.tokenize import word_tokenize
 from collections import defaultdict
 
 # Ne pas oublier de dl toutes les libs
-# nltk.download()
+#nltk.download()
 path = "./tmp/"
 ##### PREPROCESSING ######
 def del_break(file):

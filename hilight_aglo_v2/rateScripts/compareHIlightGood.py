@@ -412,7 +412,8 @@ def getPrivacyGradesPerCriter(ParfileName):
 	fileName = 'goodJson.json'
 
 	###########################################
-	file2 = os.path.join(dir, fileName)
+	#file2 = os.path.join(dir, fileName)
+	file2 = ParfileName
 
 	with open(file2) as jsonpolicy:
 			dataJsonPolicy = json.load(jsonpolicy)
@@ -443,8 +444,8 @@ def getPrivacyGradesPerCriter(ParfileName):
 	index_keyPrivacy = similarities.SparseMatrixSimilarity(tfidf_keyPrivacy[mycorpus_keyPrivacy], num_features=1000)
 
 	########################################################
-	file2 = os.path.join(dir, ParfileName)
-
+	#file2 = os.path.join(dir, ParfileName)
+	
 	with open(file2) as jsonpolicy:
 		dataJsonPolicy = json.load(jsonpolicy)
 	keysTable = []
@@ -529,14 +530,14 @@ def getPrivacyGradesPerCriter(ParfileName):
 					elif (percentageBad < percentageGood):
 						score = 1
 					else: #score = 6 si tout egal
-						score = 6;
+						score = 6
 				elif (percentageBad < percentageOk):
 					if (percentageOk > percentageGood):
 						score = 0
 					elif (percentageOk < percentageGood):
 						score = 1
 					else: #score = 6 si tout egal
-						score = 6;
+						score = 6
 				
 				listScore[i] = score
 				
@@ -624,15 +625,19 @@ def getPrivacyGradesPerCriter(ParfileName):
 			# print(criterias[22].displayCriteria())
 			
 		subCriteriaIndex+=1
-	for c in criterias:
-		c.displayCriteria()
-	return listScore
+	'''for c in criterias:
+		c.displayCriteria()'''
+		
+	json_string = json.dumps(listScore)
+	return json_string
+	#return listScore
 
 
 
 #print(getPrivacyGradesPerCriter(fileName))
-#print(getPrivacyGradesPerCriter(fileName))
-getPrivacyGradesPerCriter("goodJson.json")
+#oui = (getPrivacyGradesPerCriter("goodJson.json"))
+#print(oui)
+#getPrivacyGradesPerCriter("goodJson.json")
 
 	
 
