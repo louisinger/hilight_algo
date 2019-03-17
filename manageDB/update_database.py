@@ -1,5 +1,6 @@
-def gettopsite():
+import boto3
 
+def gettopsite():
     url ='https://www.alexa.com/topsites/countries/FR'
     req = requests.get(url, timeout=3)
     content = bs(req.content, "html.parser")
@@ -76,7 +77,6 @@ def connect_bdd():
     return collection_link
 
 def updateDatabase():
-
     col = connect_bdd()
     final_site = getlistsite(gettopsite())
     test = createdb(list(final_site))
@@ -84,3 +84,6 @@ def updateDatabase():
     for i in test:
         if(i!= 0):
             col.insert_one(i)
+
+def lambda_handler(event, context):
+    print('update the database')
