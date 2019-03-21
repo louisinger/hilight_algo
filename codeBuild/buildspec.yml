@@ -40,6 +40,7 @@ phases:
      - cd $SITE_PACKAGE_PREPROCESSING
      - sudo zip -r9 -q $HOME_DIR/preprocessing.zip .
      # Configure compare virtual environement
+     - cd $HOME_DIR
      - . venv_compare/bin/activate
        pip install gensim
        pip install pandas
