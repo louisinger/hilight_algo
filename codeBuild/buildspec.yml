@@ -6,6 +6,9 @@ phases:
      - apt-get update
      - apt-get install zip -y
      - apt-get install python3-pip -y
+ pre_build:
+   commands:
+     - echo "pre_build step"
      - pip install --upgrade pip
      - pip install --upgrade awscli
      - pip install --upgrade virtualenv
@@ -22,16 +25,15 @@ phases:
      - virtualenv venv_compare
      - export SITE_PACKAGE_PREPROCESSING=$HOME_DIR/venv_preprocessing/lib/python3.6/site-packages
      - export SITE_PACKAGE_COMPARE=$HOME_DIR/venv_compare/lib/python3.6/site-packages
- pre_build:
+ build:
    commands:
-     - echo "pre_build step"
+     - echo "build step"
      - cd $HOME_DIR
      # Configure preprocessing virtual environement
      - . venv_preprocessing/bin/activate
        pip install requests
        pip install nltk
        python -m nltk.downloader -d $NLTK_DATA wordnet stopwords punkt
-       commande bidon 
        deactivate
      - mv $NLTK_DATA $SITE_PACKAGE_PREPROCESSING
      - mv $PREPROCESSING_DIR/* $SITE_PACKAGE_PREPROCESSING
@@ -45,9 +47,9 @@ phases:
      - sudo zip -r9 -q $HOME_DIR/compare.zip $SITE_PACKAGE_COMPARE/*
      # Launch hilight
      - sudo zip -r9 -q $HOME_DIR/launchHilight.zip $LAUNCH_HILIGHT_DIR/*
- build:
+ post_build:
    commands:
-     - echo 'build step'
+     - echo "post_build step"
      - cd $HOME_DIR
      # preprocessing
      - aws s3 rm s3://lambda-preprocessing --recursive
@@ -62,9 +64,6 @@ phases:
      - aws s3 rm s3://hilightalgo --recursive
      - aws s3 cp --recursive --quiet --acl public-read ./launchHilight.zip s3://hilightalgo    
      - aws lambda update-function-code --function-name arn:aws:lambda:eu-west-3:671560023774:function:LaunchHilight --s3-bucket hilightalgo --s3-key launchHilight.zip
- post_build:
-   commands:
-     - echo "post_build step"
 artifacts:
   files:
     - '**/*'
