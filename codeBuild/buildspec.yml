@@ -1,0 +1,67 @@
+version: 0.2
+phases:
+ install:
+   commands:
+     - echo "install step"
+     - apt-get update
+     - apt-get install zip -y
+     - apt-get install python3-pip -y
+     - pip install --upgrade pip
+     - pip install --upgrade awscli
+     - pip install --upgrade virtualenv
+     # Define directories
+     - export HOME_DIR=`pwd`
+     - export PREPROCESSING_DIR=$HOME_DIR/preprocessing
+     - export COMPARE_DIR=$HOME_DIR/compareHilightGood
+     - export LAUNCH_HILIGHT_DIR=$HOME_DIR/LaunchHiLight
+     - export NLTK_DATA=$HOME_DIR/nltk_data
+     # create virtual environements
+     - cd $HOME_DIR
+     - virtualenv venv_preprocessing
+     - virtualenv venv_compare
+     - export SITE_PACKAGE_PREPROCESSING=$HOME_DIR/venv_preprocessing/lib/python3.6/site-packages
+     - export SITE_PACKAGE_COMPARE=$HOME_DIR/venv_compare/lib/python3.6/site-packages
+ pre_build:
+   commands:
+     - echo "pre_build step"
+     - cd $HOME_DIR
+     # Configure preprocessing virtual environement
+     - . venv_preprocessing/bin/activate
+       pip install requests
+       pip install nltk
+       python -m nltk.downloader -d $NLTK_DATA wordnet stopwords punkt
+       commande bidon 
+       deactivate
+     - mv $NLTK_DATA $SITE_PACKAGE_PREPROCESSING
+     - mv $PREPROCESSING_DIR/* $SITE_PACKAGE_PREPROCESSING
+     - sudo zip -r9 -q $HOME_DIR/preprocessing.zip $SITE_PACKAGE_PREPROCESSING/*
+     # Configure compare virtual environement
+     - . venv_compare/bin/activate
+       pip install gensim
+       pip install pandas
+       deactivate
+     - mv $COMPARE_DIR/* $SITE_PACKAGE_COMPARE
+     - sudo zip -r9 -q $HOME_DIR/compare.zip $SITE_PACKAGE_COMPARE/*
+     # Launch hilight
+     - sudo zip -r9 -q $HOME_DIR/launchHilight.zip $LAUNCH_HILIGHT_DIR/*
+ build:
+   commands:
+     - echo 'build step'
+     - cd $HOME_DIR
+     # preprocessing
+     - aws s3 rm s3://lambda-preprocessing --recursive
+     - aws s3 cp preprocessing.zip s3://lambda-preprocessing --recursive --quiet --acl public-read 
+     - aws lambda update-function-code --function-name arn:aws:lambda:eu-west-3:671560023774:function:preprocessing --s3-bucket lambda-preprocessing --s3-key preprocessing.zip
+     - aws lambda update-function-configuration --function-name arn:aws:lambda:eu-west-3:671560023774:function:preprocessing --environment 'Variables={NLTK_DATA=/var/task/nltk_data}'
+     # compare hilight good
+     - aws s3 rm s3://lambda-comparehilightgood --recursive
+     - aws s3 cp compare.zip s3://lambda-comparehilightgood --recursive --quiet --acl public-read 
+     - aws lambda update-function-code --function-name arn:aws:lambda:eu-west-3:671560023774:function:compareHilightGood --s3-bucket lambda-comparehilightgood --s3-key compare.zip
+     # launchHilight
+     - aws s3 rm s3://hilightalgo --recursive
+     - aws s3 cp  launchHilight.zip s3://hilightalgo --recursive --quiet --acl public-read     
+     - aws lambda update-function-code --function-name arn:aws:lambda:eu-west-3:671560023774:function:LaunchHilight --s3-bucket hilightalgo --s3-key launchHilight.zip
+ post_build:
+   commands:
+     - echo "post_build step"
+    
