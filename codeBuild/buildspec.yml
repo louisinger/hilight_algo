@@ -25,6 +25,8 @@ phases:
      - virtualenv venv_compare
      - export SITE_PACKAGE_PREPROCESSING=$HOME_DIR/venv_preprocessing/lib/python3.6/site-packages
      - export SITE_PACKAGE_COMPARE=$HOME_DIR/venv_compare/lib/python3.6/site-packages
+     - export SITE_PACKAGE_PREPROCESSING_64=$HOME_DIR/venv_preprocessing/lib64/python3.6/site-packages
+     - export SITE_PACKAGE_COMPARE_64=$HOME_DIR/venv_compare/lib64/python3.6/site-packages
  build:
    commands:
      - echo "build step"
