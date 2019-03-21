@@ -51,6 +51,7 @@ phases:
    commands:
      - echo "post_build step"
      - cd $HOME_DIR
+     - ls
      # preprocessing
      - aws s3 rm s3://lambda-preprocessing --recursive
      - aws s3 cp --recursive --acl public-read preprocessing.zip s3://lambda-preprocessing 
