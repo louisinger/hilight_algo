@@ -51,16 +51,16 @@ phases:
      - cd $HOME_DIR
      # preprocessing
      - aws s3 rm s3://lambda-preprocessing --recursive
-     - aws s3 cp preprocessing.zip s3://lambda-preprocessing --recursive --quiet --acl public-read 
+     - aws s3 cp --recursive --acl public-read preprocessing.zip s3://lambda-preprocessing 
      - aws lambda update-function-code --function-name arn:aws:lambda:eu-west-3:671560023774:function:preprocessing --s3-bucket lambda-preprocessing --s3-key preprocessing.zip
      - aws lambda update-function-configuration --function-name arn:aws:lambda:eu-west-3:671560023774:function:preprocessing --environment 'Variables={NLTK_DATA=/var/task/nltk_data}'
      # compare hilight good
      - aws s3 rm s3://lambda-comparehilightgood --recursive
-     - aws s3 cp compare.zip s3://lambda-comparehilightgood --recursive --quiet --acl public-read 
+     - aws s3 cp --recursive --acl public-read compare.zip s3://lambda-comparehilightgood
      - aws lambda update-function-code --function-name arn:aws:lambda:eu-west-3:671560023774:function:compareHilightGood --s3-bucket lambda-comparehilightgood --s3-key compare.zip
      # launchHilight
      - aws s3 rm s3://hilightalgo --recursive
-     - aws s3 cp  launchHilight.zip s3://hilightalgo --recursive --quiet --acl public-read     
+     - aws s3 cp --recursive --quiet --acl public-read launchHilight.zip s3://hilightalgo    
      - aws lambda update-function-code --function-name arn:aws:lambda:eu-west-3:671560023774:function:LaunchHilight --s3-bucket hilightalgo --s3-key launchHilight.zip
  post_build:
    commands:
