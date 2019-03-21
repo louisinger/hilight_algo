@@ -37,16 +37,19 @@ phases:
        deactivate
      - mv $NLTK_DATA $SITE_PACKAGE_PREPROCESSING
      - mv $PREPROCESSING_DIR/* $SITE_PACKAGE_PREPROCESSING
-     - sudo zip -r9 -q $HOME_DIR/preprocessing.zip $SITE_PACKAGE_PREPROCESSING/*
+     - cd $SITE_PACKAGE_PREPROCESSING
+     - sudo zip -r9 -q $HOME_DIR/preprocessing.zip .
      # Configure compare virtual environement
      - . venv_compare/bin/activate
        pip install gensim
        pip install pandas
        deactivate
      - mv $COMPARE_DIR/* $SITE_PACKAGE_COMPARE
-     - sudo zip -r9 -q $HOME_DIR/compare.zip $SITE_PACKAGE_COMPARE/*
+     - cd $SITE_PACKAGE_COMPARE
+     - sudo zip -r9 -q $HOME_DIR/compare.zip .
      # Launch hilight
-     - sudo zip -r9 -q $HOME_DIR/launchHilight.zip $LAUNCH_HILIGHT_DIR/*
+     - cd $LAUNCH_HILIGHT_DIR
+     - sudo zip -r9 -q $HOME_DIR/launchHilight.zip .
  post_build:
    commands:
      - echo "post_build step"
