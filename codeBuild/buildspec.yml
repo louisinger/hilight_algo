@@ -15,6 +15,7 @@ phases:
      - export COMPARE_DIR=$HOME_DIR/compareHilightGood
      - export LAUNCH_HILIGHT_DIR=$HOME_DIR/LaunchHiLight
      - export NLTK_DATA=$HOME_DIR/nltk_data
+     - mkdir nltk_data
      # create virtual environements
      - cd $HOME_DIR
      - virtualenv venv_preprocessing
