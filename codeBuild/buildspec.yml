@@ -21,8 +21,8 @@ phases:
      - mkdir nltk_data
      # create virtual environements
      - cd $HOME_DIR
-     - virtualenv venv_preprocessing
-     - virtualenv venv_compare
+     - virtualenv --download venv_preprocessing
+     - virtualenv --download venv_compare
      - export SITE_PACKAGE_PREPROCESSING=$HOME_DIR/venv_preprocessing/lib/python3.6/site-packages
      - export SITE_PACKAGE_COMPARE=$HOME_DIR/venv_compare/lib/python3.6/site-packages
      - export SITE_PACKAGE_PREPROCESSING_64=$HOME_DIR/venv_preprocessing/lib64/python3.6/site-packages
