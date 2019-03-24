@@ -25,8 +25,6 @@ phases:
      - virtualenv --download venv_compare
      - export SITE_PACKAGE_PREPROCESSING=$HOME_DIR/venv_preprocessing/lib/python3.6/site-packages
      - export SITE_PACKAGE_COMPARE=$HOME_DIR/venv_compare/lib/python3.6/site-packages
-     - export SITE_PACKAGE_PREPROCESSING_64=$HOME_DIR/venv_preprocessing/lib64/python3.6/site-packages
-     - export SITE_PACKAGE_COMPARE_64=$HOME_DIR/venv_compare/lib64/python3.6/site-packages
  build:
    commands:
      - echo "build step"
@@ -38,7 +36,6 @@ phases:
        python -m nltk.downloader -d $NLTK_DATA wordnet stopwords punkt
        deactivate
      - mv $NLTK_DATA $SITE_PACKAGE_PREPROCESSING
-     - mv $SITE_PACKAGE_PREPROCESSING_64/* $SITE_PACKAGE_PREPROCESSING
      - mv $PREPROCESSING_DIR/* $SITE_PACKAGE_PREPROCESSING
      - cd $SITE_PACKAGE_PREPROCESSING
      - sudo zip -r9 -q $HOME_DIR/preprocessing.zip .
@@ -48,7 +45,6 @@ phases:
        pip install gensim
        pip install pandas
        deactivate
-     - mv $SITE_PACKAGE_COMPARE_64/* $SITE_PACKAGE_COMPARE
      - mv $COMPARE_DIR/* $SITE_PACKAGE_COMPARE
      - cd $SITE_PACKAGE_COMPARE
      - sudo zip -r9 -q $HOME_DIR/compare.zip .
@@ -67,6 +63,7 @@ phases:
      - aws lambda update-function-configuration --function-name arn:aws:lambda:eu-west-3:671560023774:function:preprocessing --environment 'Variables={NLTK_DATA=/var/task/nltk_data}'
      # compare hilight good
      - aws s3 rm s3://lambda-comparehilightgood --recursive
+     - aws s3 cp --acl public-read --recursive $HOME_DIR/venv_compare s3://lambda-comparehilightgood/compare.zip
      - aws s3 cp --acl public-read compare.zip s3://lambda-comparehilightgood/compare.zip
      - aws lambda update-function-code --function-name arn:aws:lambda:eu-west-3:671560023774:function:compareHilightGood --s3-bucket lambda-comparehilightgood --s3-key compare.zip
      # launchHilight
