@@ -42,9 +42,8 @@ phases:
      # Configure compare virtual environement
      - cd $HOME_DIR
      - . venv_compare/bin/activate
-       pip install gensim
-       pip install pandas
-       deactivate
+     - pip install gensim
+     - pip install pandas
      - mv $COMPARE_DIR/* $SITE_PACKAGE_COMPARE
      - cd $SITE_PACKAGE_COMPARE
      - sudo zip -r9 -q $HOME_DIR/compare.zip .
