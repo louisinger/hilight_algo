@@ -39,14 +39,6 @@ phases:
      - mv $PREPROCESSING_DIR/* $SITE_PACKAGE_PREPROCESSING
      - cd $SITE_PACKAGE_PREPROCESSING
      - sudo zip -r9 -q $HOME_DIR/preprocessing.zip .
-     # Configure compare virtual environement
-     - cd $HOME_DIR
-     - . venv_compare/bin/activate
-     - pip install gensim
-     - pip install pandas
-     - mv $COMPARE_DIR/* $SITE_PACKAGE_COMPARE
-     - cd $SITE_PACKAGE_COMPARE
-     - sudo zip -r9 -q $HOME_DIR/compare.zip .
      # Launch hilight
      - cd $LAUNCH_HILIGHT_DIR
      - sudo zip -r9 -q $HOME_DIR/launchHilight.zip .
@@ -60,15 +52,7 @@ phases:
      - aws s3 cp --acl public-read preprocessing.zip s3://lambda-preprocessing/preprocessing.zip
      - aws lambda update-function-code --function-name arn:aws:lambda:eu-west-3:671560023774:function:preprocessing --s3-bucket lambda-preprocessing --s3-key preprocessing.zip
      - aws lambda update-function-configuration --function-name arn:aws:lambda:eu-west-3:671560023774:function:preprocessing --environment 'Variables={NLTK_DATA=/var/task/nltk_data}'
-     # compare hilight good
-     - aws s3 rm s3://lambda-comparehilightgood --recursive
-     - aws s3 cp --acl public-read --recursive $HOME_DIR/venv_compare s3://lambda-comparehilightgood/compare.zip
-     - aws s3 cp --acl public-read compare.zip s3://lambda-comparehilightgood/compare.zip
-     - aws lambda update-function-code --function-name arn:aws:lambda:eu-west-3:671560023774:function:compareHilightGood --s3-bucket lambda-comparehilightgood --s3-key compare.zip
      # launchHilight
      - aws s3 rm s3://hilightalgo --recursive
      - aws s3 cp --quiet --acl public-read launchHilight.zip s3://hilightalgo/launchHilight.zip
      - aws lambda update-function-code --function-name arn:aws:lambda:eu-west-3:671560023774:function:LaunchHilight --s3-bucket hilightalgo --s3-key launchHilight.zip
-artifacts:
-  files:
-    - '**/*'
