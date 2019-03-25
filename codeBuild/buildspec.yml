@@ -9,6 +9,7 @@ phases:
  pre_build:
    commands:
      - echo "pre_build step"
+     - sudo npm install -g serverless
      - pip install --upgrade pip
      - pip install --upgrade awscli
      - pip install --upgrade virtualenv
@@ -33,7 +34,6 @@ phases:
      - . venv_preprocessing/bin/activate
      - pip install requests
      - pip install nltk
-     - pip install libsqlite3-dev
      - python -m nltk.downloader -d $NLTK_DATA wordnet stopwords punkt
      - mv $NLTK_DATA $SITE_PACKAGE_PREPROCESSING
      - mv $PREPROCESSING_DIR/* $SITE_PACKAGE_PREPROCESSING

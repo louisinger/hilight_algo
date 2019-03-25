@@ -26,8 +26,6 @@ def del_break(file):
     '''
      Remove breaks from a text
     '''
-
-
     f = open(file, encoding = "utf8")
     raw = f.read()
     raw = raw.replace('\n','')
