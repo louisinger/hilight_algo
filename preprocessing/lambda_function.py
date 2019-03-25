@@ -1,6 +1,5 @@
 import json
 import sys
-#import preprocessing
 import preprocessing
 
 def lambda_handler(event, context):
