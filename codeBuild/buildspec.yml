@@ -4,6 +4,7 @@ phases:
    commands:
      - echo "install step"
      - apt-get update
+     - npm install -g fs-extra
      - npm install -g npm
      - npm install -g serverless
  pre_build:
