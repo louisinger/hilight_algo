@@ -17,9 +17,12 @@ import re
 from nltk.stem import PorterStemmer
 from nltk.tokenize import word_tokenize
 from collections import defaultdict
+import boto3
 
 # Ne pas oublier de dl toutes les libs
 #nltk.download()
+
+
 path = "./tmp/"
 ##### PREPROCESSING ######
 def del_break(file):
@@ -40,7 +43,7 @@ def sentence_tokenize(file, language):
     '''
     # ATTENTION AU FORMAT DES FICHIERS sinon erreurs possibles -> pour twitter uft8
     # Il faudra adapter le path pour les fichiers des CGUs
-    if isinstance(str,file) and file.endswith(".txt"):
+    if isinstance(file, str) and file.endswith(".txt"):
 
         del_break(file)
         f = open(file, encoding="utf8")
@@ -48,7 +51,7 @@ def sentence_tokenize(file, language):
         raw = raw.replace('\n\n', '. ').replace('\n', ' ')
         f.close()
     
-    elif isinstance(str,file): 
+    elif isinstance(file, str): 
         raw = file.replace("\n\n", '. ').replace('\n', " ")
     else :
         return " ERROR TYPE"
@@ -98,14 +101,13 @@ def sentence_tokenize(file, language):
 
     return data, data_stopwords
 
+
 ### Trouver les phrases comportant les mots clefs
 def find_sentences(file, language):
 
         '''
             find useful sentences in the text.
         '''
-
-
         (data, data_stopwords) = sentence_tokenize(file, language)
 
         # mots a chercher

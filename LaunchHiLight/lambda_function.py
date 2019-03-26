@@ -3,31 +3,31 @@ import boto3
 
 lambda_client = boto3.client('lambda')
 
-def lambda_handler(event, context):
+def handler(event, context):
     payload_preprocessing = {}
-    payload_preprocessing['websitename'] = event['queryStringParameters']['websitename']
+    payload_preprocessing['websitename'] = event['path']['websitename']
 
     payload_compare = {}
     
     response = {}
-    
-    try:
-        
-        preprocessing_result = lambda_client.invoke(
-            FunctionName='preprocessing',
-            InvocationType='RequestResponse',
-            Payload=json.dumps(payload_preprocessing)
-        )
-        '''
-        payload_compare['preprocessing'] = preprocessing_result
 
+    try:
+        preprocessing_result = lambda_client.invoke(
+        FunctionName='preprocessing-dev-preprocessing',
+        InvocationType='RequestResponse',
+        Payload=json.dumps(payload_preprocessing)
+        )
+        preprocessing_res = json.loads(preprocessing_result['Payload'].read())
+
+        payload_compare['preprocessing'] = preprocessing_res
+        
         compare_result = lambda_client.invoke(
-            FunctionName='compareHilightGood',
+            FunctionName='compare-hilight-good-dev-compare',
             InvocationType='RequestResponse',
             Payload=json.dumps(payload_compare)
         )
-        '''
         
+        body_res = json.loads(compare_result['Payload'].read())
         response = {
             'statusCode': 200,
             'headers': {
@@ -35,9 +35,8 @@ def lambda_handler(event, context):
                 "Access-Control-Allow-Origin" : "*",
                 "Access-Control-Allow-Headers" : "*"
             },
-            'body': preprocessing_result
-        }
-
+            'body': json.dumps(body_res)  
+            }
         return response
     except Exception as e:
         response = {
@@ -51,4 +50,4 @@ def lambda_handler(event, context):
         }
         print(e)
         raise e
-
+     
