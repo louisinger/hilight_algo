@@ -19,10 +19,13 @@ phases:
      - echo "build step"
      - cd $PREPROCESSING_DIR
      - npm install
+     - sls plugin install --name serverless-python-requirements
      - sls deploy
      - cd $COMPARE_DIR
      - npm install
+     - sls plugin install --name serverless-python-requirements
      - sls deploy
      - cd $LAUNCH_HILIGHT_DIR
      - npm install
+     - sls plugin install --name serverless-python-requirements
      - sls deploy
