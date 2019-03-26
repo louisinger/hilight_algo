@@ -4,8 +4,8 @@ phases:
    commands:
      - echo "install step"
      - apt-get update
-     - apt-get install zip -y
-     - apt-get install python3-pip -y
+     - npm install -g npm
+     - npm install -g serverless
  pre_build:
    commands:
      - echo "pre_build step"
