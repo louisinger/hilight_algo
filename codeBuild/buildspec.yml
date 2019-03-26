@@ -9,50 +9,20 @@ phases:
  pre_build:
    commands:
      - echo "pre_build step"
-     - sudo npm install -g serverless
-     - pip install --upgrade pip
-     - pip install --upgrade awscli
-     - pip install --upgrade virtualenv
      # Define directories
      - export HOME_DIR=`pwd`
      - export PREPROCESSING_DIR=$HOME_DIR/preprocessing
      - export COMPARE_DIR=$HOME_DIR/compareHilightGood
      - export LAUNCH_HILIGHT_DIR=$HOME_DIR/LaunchHiLight
-     - export NLTK_DATA=$HOME_DIR/nltk_data
-     - mkdir nltk_data
-     # create virtual environements
-     - cd $HOME_DIR
-     - virtualenv --download venv_preprocessing
-     - virtualenv --download venv_compare
-     - export SITE_PACKAGE_PREPROCESSING=$HOME_DIR/venv_preprocessing/lib/python3.6/site-packages
-     - export SITE_PACKAGE_COMPARE=$HOME_DIR/venv_compare/lib/python3.6/site-packages
  build:
    commands:
      - echo "build step"
-     - cd $HOME_DIR
-     # Configure preprocessing virtual environement
-     - . venv_preprocessing/bin/activate
-     - pip install requests
-     - pip install nltk
-     - python -m nltk.downloader -d $NLTK_DATA wordnet stopwords punkt
-     - mv $NLTK_DATA $SITE_PACKAGE_PREPROCESSING
-     - mv $PREPROCESSING_DIR/* $SITE_PACKAGE_PREPROCESSING
-     - cd $SITE_PACKAGE_PREPROCESSING
-     - sudo zip -r9 -q $HOME_DIR/preprocessing.zip .
-     # Launch hilight
+     - cd $PREPROCESSING_DIR
+     - npm install
+     - sls deploy
+     - cd $COMPARE_DIR
+     - npm install
+     - sls deploy
      - cd $LAUNCH_HILIGHT_DIR
-     - sudo zip -r9 -q $HOME_DIR/launchHilight.zip .
- post_build:
-   commands:
-     - echo "post_build step"
-     - cd $HOME_DIR
-     - ls
-     # preprocessing
-     - aws s3 rm s3://lambda-preprocessing --recursive
-     - aws s3 cp --acl public-read preprocessing.zip s3://lambda-preprocessing/preprocessing.zip
-     - aws lambda update-function-code --function-name arn:aws:lambda:eu-west-3:671560023774:function:preprocessing --s3-bucket lambda-preprocessing --s3-key preprocessing.zip
-     - aws lambda update-function-configuration --function-name arn:aws:lambda:eu-west-3:671560023774:function:preprocessing --environment 'Variables={NLTK_DATA=/var/task/nltk_data}'
-     # launchHilight
-     - aws s3 rm s3://hilightalgo --recursive
-     - aws s3 cp --quiet --acl public-read launchHilight.zip s3://hilightalgo/launchHilight.zip
-     - aws lambda update-function-code --function-name arn:aws:lambda:eu-west-3:671560023774:function:LaunchHilight --s3-bucket hilightalgo --s3-key launchHilight.zip
+     - npm install
+     - sls deploy
