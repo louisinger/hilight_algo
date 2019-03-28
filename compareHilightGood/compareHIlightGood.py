@@ -631,7 +631,7 @@ def getPrivacyGradesPerCriter(ParfileName):
 	'''for c in criterias:
 		c.displayCriteria()'''
 		
-	json_string = json.dumps(criterias)
+	json_string = jsons.dumps(criterias)
 	return json_string
 	#return listScore
 
