@@ -635,30 +635,7 @@ def getPrivacyGradesPerCriter(ParfileName):
 	return json_string
 	#return listScore
 
-
-
 #print(getPrivacyGradesPerCriter(fileName))
 #oui = (getPrivacyGradesPerCriter("goodJson.json"))
 #print(oui)
 #getPrivacyGradesPerCriter("goodJson.json")
-
-	
-
-		
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-
-
