@@ -156,9 +156,55 @@ def compare_grade_percentage():
     py.plot(dataBar_good, filename = 'twitter-good-bar', auto_open=True)
     
 
+def compare_from_api_twitter():
+    import urllib
+    import requests
+    import re
+    import simplejson as json
+
+    raw = '"\\u00ef\\u00bb\\u00bf"' # Your é—Ç examples.
+    data = json.loads(raw)
+    print(data) # garbage
+    print(data.encode('latin1').decode('utf8')) # corrected
+
+    url="https://wh5ya21546.execute-api.eu-west-3.amazonaws.com/dev/hilight/twitter?fbclid=IwAR0lp2AXJCcxEqzWbwSsvLG7etUS8pl1e4m9rf-W84d9f3kMUg92Iu_TQsQ"
+    json_url = urllib.request.urlopen(url)
+    data = json.loads(json_url.read())
+    body = json.loads(data['body'])
+    body = re.sub(' +', ' ', body)
+    body = json.loads(body)
+
+    data_evaluation = {}
+    for i in body:
+        if i['gradeCriteria'] == -1:
+            data_evaluation[i['nameCriteria']] = 1.5
+        elif i['gradeCriteria'] == -6:
+            data_evaluation[i['nameCriteria']] = 0.75
+        else:
+            data_evaluation[i['nameCriteria']] = -1
+
+    #pprint(data_evaluation)
+
+    dataBar = []
+    for category in data_evaluation:
+        trace = go.Bar(
+            x=[category],
+            y=[data_evaluation[category]],
+            name=category
+        )
+        dataBar.append(trace)
+
+    graph_url = py.plot(dataBar, filename = 'twitter-from-api', auto_open=True)
+
+    html = "<div><a href=" + graph_url + "target='_blank' title='twitter-from-api' style='display: block; text-align: center;'><img src=" + graph_url + ".png alt='twitter-from-api' style='max-width: 100%;width: 600px;'  width='600'/></a><script data-plotly=" + graph_url.replace('https://plot.ly/~', '') + " src='https://plot.ly/embed.js' async></script></div>"
+    return html
+
+
+
 #graph_bar()
 #graph_pie()
-compare_grade_percentage()
+#compare_grade_percentage()
+print(compare_from_api_twitter())
 
 
 
