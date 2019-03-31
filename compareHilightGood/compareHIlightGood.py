@@ -4,6 +4,7 @@ import gensim
 import logging
 import os
 import json
+import jsons
 # Load the Pandas libraries with alias 'pd' 
 import pandas as pd 
 
@@ -415,9 +416,10 @@ def getPrivacyGradesPerCriter(ParfileName):
 	#file2 = os.path.join(dir, fileName)
 	file2 = ParfileName
 
-	with open(file2) as jsonpolicy:
-			dataJsonPolicy = json.load(jsonpolicy)
-
+#	with open(file2) as jsonpolicy:
+#           dataJsonPolicy = json.load(jsonpolicy)
+        
+	dataJsonPolicy =json.loads(ParfileName['result'])
 	keysTable = []
 	for key in dataJsonPolicy:
 		totalkey = ""
@@ -435,7 +437,6 @@ def getPrivacyGradesPerCriter(ParfileName):
 
 	# Tokenize the docs
 	tokenized_list_keyPrivacy = [simple_preprocess(doc) for doc in keysTable]
-
 	# Create the Corpus
 	mycorpus_keyPrivacy = [mydict.doc2bow(doc, allow_update=True) for doc in tokenized_list_keyPrivacy]
 
@@ -446,8 +447,11 @@ def getPrivacyGradesPerCriter(ParfileName):
 	########################################################
 	#file2 = os.path.join(dir, ParfileName)
 	
-	with open(file2) as jsonpolicy:
-		dataJsonPolicy = json.load(jsonpolicy)
+	#with open(file2) as jsonpolicy:
+		#dataJsonPolicy = json.load(jsonpolicy)
+
+	dataJsonPolicy =json.loads(ParfileName['result'])
+
 	keysTable = []
 	for key in dataJsonPolicy:
 		totalkey = ""
@@ -628,34 +632,11 @@ def getPrivacyGradesPerCriter(ParfileName):
 	'''for c in criterias:
 		c.displayCriteria()'''
 		
-	json_string = json.dumps(listScore)
+	json_string = jsons.dumps(criterias)
 	return json_string
 	#return listScore
-
-
 
 #print(getPrivacyGradesPerCriter(fileName))
 #oui = (getPrivacyGradesPerCriter("goodJson.json"))
 #print(oui)
 #getPrivacyGradesPerCriter("goodJson.json")
-
-	
-
-		
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-
-

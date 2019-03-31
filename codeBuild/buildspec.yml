@@ -1,0 +1,32 @@
+version: 0.2
+phases:
+ install:
+   commands:
+     - echo "install step"
+     - apt-get update
+     - npm install -g fs-extra
+     - npm install -g npm
+     - npm install -g serverless
+ pre_build:
+   commands:
+     - echo "pre_build step"
+     # Define directories
+     - export HOME_DIR=`pwd`
+     - export PREPROCESSING_DIR=$HOME_DIR/preprocessing
+     - export COMPARE_DIR=$HOME_DIR/compareHilightGood
+     - export LAUNCH_HILIGHT_DIR=$HOME_DIR/LaunchHiLight
+ build:
+   commands:
+     - echo "build step"
+     - cd $PREPROCESSING_DIR
+     - npm install
+     - sls plugin install --name serverless-python-requirements
+     - sls deploy
+     - cd $COMPARE_DIR
+     - npm install
+     - sls plugin install --name serverless-python-requirements
+     - sls deploy
+     - cd $LAUNCH_HILIGHT_DIR
+     - npm install
+     - sls plugin install --name serverless-python-requirements
+     - sls deploy

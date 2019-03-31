@@ -1,4 +1,12 @@
 import boto3
+import requests
+import bs4 as bs
+import re
+import pandas as pd
+import json 
+import httplib2
+import urllib
+import pymongo as pm
 
 def gettopsite():
     url ='https://www.alexa.com/topsites/countries/FR'
@@ -87,3 +95,6 @@ def updateDatabase():
 
 def lambda_handler(event, context):
     print('update the database')
+
+test = updateDatabase()
+test
