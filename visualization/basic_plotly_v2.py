@@ -156,7 +156,7 @@ def compare_grade_percentage():
     py.plot(dataBar_good, filename = 'twitter-good-bar', auto_open=True)
     
 
-def compare_from_api_twitter():
+def compare_from_api(website):
     import urllib
     import requests
     import re
@@ -167,7 +167,7 @@ def compare_from_api_twitter():
     print(data) # garbage
     print(data.encode('latin1').decode('utf8')) # corrected
 
-    url="https://wh5ya21546.execute-api.eu-west-3.amazonaws.com/dev/hilight/twitter?fbclid=IwAR0lp2AXJCcxEqzWbwSsvLG7etUS8pl1e4m9rf-W84d9f3kMUg92Iu_TQsQ"
+    url="https://wh5ya21546.execute-api.eu-west-3.amazonaws.com/dev/hilight/" + website
     json_url = urllib.request.urlopen(url)
     data = json.loads(json_url.read())
     body = json.loads(data['body'])

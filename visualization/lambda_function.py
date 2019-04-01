@@ -1,5 +1,5 @@
 import json 
-import basic_plotly_v2.py
+import basic_plotly_v2
 
 def handler(event, context):
     response = {}
@@ -13,7 +13,7 @@ def handler(event, context):
                 "Access-Control-Allow-Origin" : "*",
                 "Access-Control-Allow-Headers" : "*"
             },
-            'body':   
+            'body': basic_plotly_v2.compare_from_api(website)  
             }
         return response
     except Exception as e:
