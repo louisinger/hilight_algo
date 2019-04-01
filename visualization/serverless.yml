@@ -1,0 +1,28 @@
+service: hilight-visualization # NOTE: update this with your service name
+provider:
+  name: aws
+  runtime: python3.7
+  region: eu-west-3
+
+functions:
+  hilight-visualisation:
+    handler: lambda_function.handler
+    events:
+      - http:
+          path: /hilightvisu/{websitename}
+          method: get
+          cors: true
+          integration: lambda
+          request:
+           parameters:
+            paths:
+             websitename: true
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+   dockerizePip: true
+
+
