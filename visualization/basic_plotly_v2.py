@@ -183,7 +183,7 @@ def compare_from_api(website):
         )
         dataBar.append(trace)
 
-    graph_url = py.plot(dataBar, filename = 'twitter-from-api', auto_open=True)
+    graph_url = py.plot(dataBar, filename = website + '-from-api', auto_open=True)
 
     html = "<div><a href=" + graph_url + "target='_blank' title='" + website  + "-from-api' style='display: block; text-align: center;'><img src=" + graph_url + ".png alt='" + website + "-from-api' style='max-width: 100%;width: 600px;'  width='600'/></a><script data-plotly=" + graph_url.replace('https://plot.ly/~', '') + " src='https://plot.ly/embed.js' async></script></div>"
 
@@ -197,3 +197,4 @@ def compare_from_api(website):
 
 
 
+ 
