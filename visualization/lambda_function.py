@@ -4,7 +4,7 @@ import basic_plotly_v2
 def handler(event, context):
     response = {}
     try:
-	website = event['path']['websitename']	
+        website = event['path']['websitename']	
 
         response = {
             'statusCode': 200,
@@ -15,7 +15,6 @@ def handler(event, context):
             },
             'body': basic_plotly_v2.compare_from_api(website)  
             }
-        return response
     except Exception as e:
         response = {
             'statusCode': 500,
@@ -27,5 +26,5 @@ def handler(event, context):
             'body': 'Erreur coté serveur - HiLight'
         }
         print(e)
-        raise e
-     
+        
+    return response

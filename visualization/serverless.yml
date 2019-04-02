@@ -7,6 +7,8 @@ provider:
 functions:
   hilight-visualisation:
     handler: lambda_function.handler
+    environment:
+     PLOTLY_DIR: /var/task/.plotly
     events:
       - http:
           path: /hilightvisu/{websitename}

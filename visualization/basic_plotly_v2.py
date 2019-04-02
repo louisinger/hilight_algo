@@ -3,13 +3,9 @@ import plotly.plotly as py
 import plotly.graph_objs as go
 import plotly.io as pio
 import os
-import numpy as np
 import json
-from pprint import pprint
-import  requests
-from collections import Counter
 
-plotly.tools.set_credentials_file(username='axelc', api_key='6qQk1TZYuAOpw0g7smjc')
+py.sign_in('axelc', '6qQk1TZYuAOpw0g7smjc')
 
 categories = ["Personal data", "data controller", "Log data", "account data", "Processing", "third parties", "profiling", 
 "Data Subject", "Data Protection Officer", "Data Protection Authority"]
@@ -158,14 +154,7 @@ def compare_grade_percentage():
 
 def compare_from_api(website):
     import urllib
-    import requests
     import re
-    import simplejson as json
-
-    raw = '"\\u00ef\\u00bb\\u00bf"' # Your é—Ç examples.
-    data = json.loads(raw)
-    print(data) # garbage
-    print(data.encode('latin1').decode('utf8')) # corrected
 
     url="https://wh5ya21546.execute-api.eu-west-3.amazonaws.com/dev/hilight/" + website
     json_url = urllib.request.urlopen(url)
@@ -196,7 +185,8 @@ def compare_from_api(website):
 
     graph_url = py.plot(dataBar, filename = 'twitter-from-api', auto_open=True)
 
-    html = "<div><a href=" + graph_url + "target='_blank' title='twitter-from-api' style='display: block; text-align: center;'><img src=" + graph_url + ".png alt='twitter-from-api' style='max-width: 100%;width: 600px;'  width='600'/></a><script data-plotly=" + graph_url.replace('https://plot.ly/~', '') + " src='https://plot.ly/embed.js' async></script></div>"
+    html = "<div><a href=" + graph_url + "target='_blank' title='" + website  + "-from-api' style='display: block; text-align: center;'><img src=" + graph_url + ".png alt='" + website + "-from-api' style='max-width: 100%;width: 600px;'  width='600'/></a><script data-plotly=" + graph_url.replace('https://plot.ly/~', '') + " src='https://plot.ly/embed.js' async></script></div>"
+
     return html
 
 
@@ -204,7 +194,6 @@ def compare_from_api(website):
 #graph_bar()
 #graph_pie()
 #compare_grade_percentage()
-print(compare_from_api_twitter())
 
 
 
