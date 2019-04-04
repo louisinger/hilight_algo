@@ -189,7 +189,7 @@ def compare_from_api(website):
 
 #graph_bar()
 #graph_pie()
-compare_from_api('facebook')
+#compare_from_api(website)
 
 
 
