@@ -165,13 +165,9 @@ def compare_from_api(website):
 
     data_evaluation = {}
     for i in body:
-        if i['gradeCriteria'] == -1:
-            data_evaluation[i['nameCriteria']] = 1.5
-        elif i['gradeCriteria'] == -6:
-            data_evaluation[i['nameCriteria']] = 0.75
-        else:
-            data_evaluation[i['nameCriteria']] = -1
-
+        if(i['gradeCriteria'] != -6):
+            data_evaluation[i['nameCriteria']] = i['gradeCriteria']
+    
     #pprint(data_evaluation)
 
     dataBar = []
@@ -193,7 +189,7 @@ def compare_from_api(website):
 
 #graph_bar()
 #graph_pie()
-#compare_grade_percentage()
+compare_from_api('facebook')
 
 
 
