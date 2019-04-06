@@ -1,0 +1,1 @@
+# compareHilightGood script
