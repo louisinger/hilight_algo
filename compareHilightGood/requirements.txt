@@ -1,3 +1,0 @@
-gensim
-pandas
-jsons

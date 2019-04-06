@@ -1,2 +1,0 @@
-# hilight_algo
-

@@ -1,9 +1,0 @@
-{
-  "name": "compare-hilight-good",
-  "description": "",
-  "version": "0.1.0",
-  "dependencies": {},
-  "devDependencies": {
-    "serverless-python-requirements": "^4.3.0"
-  }
-}
