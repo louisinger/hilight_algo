@@ -98,7 +98,7 @@ def geturl():
     onlytosdrdb = dict((k,v) for k,v in db.items() if isinstance(v,dict))
     dictURL = dict()
     for k in onlytosdrdb.keys():
-        dictURL.update({k:oui[k]['links']})
+        dictURL.update({k:onlytosdrdb[k]['links']})
     urls = dict()
     for i,j in dictURL.items():
         dictsite = dict()
