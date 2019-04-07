@@ -1,14 +1,20 @@
 import boto3
 import requests
-import bs4 as bs
+from bs4 import BeautifulSoup as bs
 import re
 import pandas as pd
 import json 
 import httplib2
 import urllib
-import pymongo as pm
+#import pymongo as pm
 
 def gettopsite():
+    """
+    Retreive top 50 france website stats from amazon alexa
+    returns : pandas dataframe
+    """
+    
+    
     url ='https://www.alexa.com/topsites/countries/FR'
     req = requests.get(url, timeout=3)
     content = bs(req.content, "html.parser")
@@ -39,7 +45,11 @@ def gettopsite():
     return df
 
 def getlistsite(df):
-
+    
+    """
+    Retreives list of website names from dataframe got with gettopsite()
+    returns: list of string
+    """
     website_name = list(df.iloc[:,0])
 
     w = [re.split(".fr$|.com$|.ru$|.org$|.net$|.tv$",i) for i in website_name]
@@ -55,36 +65,114 @@ def getlistsite(df):
     return final_site
 
 def apitosdr(data):
-
+    """
+    Retreive Tosdr data from api for site in data
+    """
     if(isinstance(data,str)):
-        a = 0
         u = "https://tosdr.org/api/1/service/"+data +".json"
         h = httplib2.Http()
         resp = h.request(u, 'HEAD')
         if(int(resp[0]['status']) != 200):
-            return 0
+            return {data : "No info from tosdr"}
         else:
-            a = a+1
-            print(a)
             with urllib.request.urlopen(u) as url:
                 d = json.loads(url.read().decode())
-            return d
+            return {data:d}
 
 
 def createdb(liste):
-    x = []
+    """
+    create dict of tosdr data
+    """
+    x = dict()
     for i in liste:
-        x.append(apitosdr(i))
+        x.update(apitosdr(i))
     return x
 
-def connect_bdd():
+def geturl():
+    """
+    retreive website name and all urls from todsr dict
+    """
+    final_site = getlistsite(gettopsite())
+    db = createdb(final_site)
+    onlytosdrdb = dict((k,v) for k,v in db.items() if isinstance(v,dict))
+    dictURL = dict()
+    for k in onlytosdrdb.keys():
+        dictURL.update({k:oui[k]['links']})
+    urls = dict()
+    for i,j in dictURL.items():
+        dictsite = dict()
+        for k,v in j.items():
+            for k1,v1 in v.items():
+                if k1 == 'name':
+                    continue
+                else:
+                    dictsite.update({k:v1})
+        urls.update({i:dictsite})
+    return urls
+
+
+def get_privacy_policies(list_of_url):   
+    """
+    get privacy policies from url in list
+    """
+    final__privacy_policy = []
+    privacy_google = None #not to flood google
+    for k,v in list_of_url.items():
+        for k1, v1 in v.items():
+            if 'privacy policy'in k1.lower():
+                #print(k,k1)
+                if 'google' in v1.lower():
+                    if privacy_google == None :
+                        privacy_google = get_text_from_html(v1)
+                        final__privacy_policy.append((k, privacy_google))
+                    else:
+                        final__privacy_policy.append((k, privacy_google))
+                else:      
+                    final__privacy_policy.append((k, get_text_from_html(v1)))
+
+    return final__privacy_policy
+
+def get_text_from_html(url):
+    '''
+    convert html to text
+    '''
+    url = url
+    req = requests.get(url, timeout=3)
+    soup = bs(req.content, "html.parser")
+
+    # kill all script and style elements
+    for script in soup(["script", "style"]):
+        script.extract()    # rip it out
+
+    # get text
+    text = soup.get_text()
+
+    # break into lines and remove leading and trailing space on each
+    lines = (line.strip() for line in text.splitlines())
+    # break multi-headlines into a line each
+    chunks = (phrase.strip() for line in lines for phrase in line.split("  "))
+    # drop blank lines
+    text = '\n'.join(chunk for chunk in chunks if chunk)
+    return text
+
+
+def main_function():
+    """
+    function to launch to get list of tuple (webname, text)
+    """
+    return get_privacy_policies(geturl())
+
+
+
+"""def connect_bdd():
     client = pm.MongoClient()
     db = client.hilight
 
     collection_link = db.tosl
-    return collection_link
+    return collection_link"""
 
-def updateDatabase():
+"""def updateDatabase():
     col = connect_bdd()
     final_site = getlistsite(gettopsite())
     test = createdb(list(final_site))
@@ -92,9 +180,7 @@ def updateDatabase():
     for i in test:
         if(i!= 0):
             col.insert_one(i)
-
+"""
 def lambda_handler(event, context):
     print('update the database')
 
-test = updateDatabase()
-test
