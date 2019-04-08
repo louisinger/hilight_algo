@@ -1,6 +1,7 @@
 service: hilight-visualization # NOTE: update this with your service name
 provider:
   name: aws
+  timeout: 30
   runtime: python3.7
   region: eu-west-3
 

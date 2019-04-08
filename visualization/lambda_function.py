@@ -39,7 +39,7 @@ def handler2(event, context):
                 "Access-Control-Allow-Origin" : "*",
                 "Access-Control-Allow-Headers" : "*"
             },
-            'body': basic_plotly_v2.compare_between_cgu(['twitter', 'facebook', 'amazon'])  
+            'body': basic_plotly_v2.compare_between_cgu(['twitter', 'facebook', 'amazon', 'blogspot', 'ebay', 'google', 'instagram', 'microsoft', 'netflix', 'reddit', 'wikipedia', 'yahoo', 'youtube'])  
             }
     except Exception as e:
         response = {

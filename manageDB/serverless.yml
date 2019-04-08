@@ -4,15 +4,22 @@ provider:
   name: aws
   runtime: python3.7
   region: eu-west-3
+  timeout: 120
   iamRoleStatements:
     - Effect: "Allow"
       Action:
-        - "s3:ListBucket"
+        - "dynamodb:PutItem"
       Resource: "arn:aws:dynamodb:eu-west-3:671560023774:table/CGU" 
 
 functions:
-  hello:
-    handler: handler.hello
+  manage-db:
+    handler: lambda_function.handler
     events:
       - schedule: rate(24 hours)
 
+custom:
+  pythonRequirements:
+    dockerizePip: true
+
+plugins:
+  - serverless-python-requirements
