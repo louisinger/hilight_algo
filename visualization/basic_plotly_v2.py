@@ -3,13 +3,11 @@ import plotly.plotly as py
 import plotly.graph_objs as go
 import plotly.io as pio
 import os
-import numpy as np
 import json
-from pprint import pprint
-import  requests
-from collections import Counter
+import urllib
+import re
 
-plotly.tools.set_credentials_file(username='axelc', api_key='6qQk1TZYuAOpw0g7smjc')
+py.sign_in('axelc', '6qQk1TZYuAOpw0g7smjc')
 
 categories = ["Personal data", "data controller", "Log data", "account data", "Processing", "third parties", "profiling", 
 "Data Subject", "Data Protection Officer", "Data Protection Authority"]
@@ -17,7 +15,7 @@ categories = ["Personal data", "data controller", "Log data", "account data", "P
 #construit le dictionnaire des mots et leur occurence(grouped words)
 def build_dic_full():
     #on récupère les données qu'on a auparavant analysées
-    f = open('useful_sentence_full.json')
+    f = open('./old/useful_sentence_full.json')
     cgu = json.load(f)
     
     dic = {}
@@ -34,7 +32,7 @@ def build_dic_full():
 #construit le dictionnaire des mots et leur occurence(basic words)
 def build_dic_basic():
     #on récupère les données qu'on a auparavant analysées
-    f = open('useful_sentence_syn.json')
+    f = open('./old/useful_sentence_syn.json')
     cgu = json.load(f)
     
     dic = {}
@@ -156,18 +154,8 @@ def compare_grade_percentage():
     py.plot(dataBar_good, filename = 'twitter-good-bar', auto_open=True)
     
 
-def compare_from_api_twitter():
-    import urllib
-    import requests
-    import re
-    import simplejson as json
-
-    raw = '"\\u00ef\\u00bb\\u00bf"' # Your é—Ç examples.
-    data = json.loads(raw)
-    print(data) # garbage
-    print(data.encode('latin1').decode('utf8')) # corrected
-
-    url="https://wh5ya21546.execute-api.eu-west-3.amazonaws.com/dev/hilight/twitter?fbclid=IwAR0lp2AXJCcxEqzWbwSsvLG7etUS8pl1e4m9rf-W84d9f3kMUg92Iu_TQsQ"
+def compare_from_api(website):
+    url="https://wh5ya21546.execute-api.eu-west-3.amazonaws.com/dev/hilight/" + website
     json_url = urllib.request.urlopen(url)
     data = json.loads(json_url.read())
     body = json.loads(data['body'])
@@ -176,13 +164,9 @@ def compare_from_api_twitter():
 
     data_evaluation = {}
     for i in body:
-        if i['gradeCriteria'] == -1:
-            data_evaluation[i['nameCriteria']] = 1.5
-        elif i['gradeCriteria'] == -6:
-            data_evaluation[i['nameCriteria']] = 0.75
-        else:
-            data_evaluation[i['nameCriteria']] = -1
-
+        if i['gradeCriteria'] != -6:
+            data_evaluation[i['nameCriteria']] = i['gradeCriteria']
+    
     #pprint(data_evaluation)
 
     dataBar = []
@@ -194,17 +178,107 @@ def compare_from_api_twitter():
         )
         dataBar.append(trace)
 
-    graph_url = py.plot(dataBar, filename = 'twitter-from-api', auto_open=True)
+    graph_url = py.plot(dataBar, filename = website + '-from-api', auto_open=True)
 
-    html = "<div><a href=" + graph_url + "target='_blank' title='twitter-from-api' style='display: block; text-align: center;'><img src=" + graph_url + ".png alt='twitter-from-api' style='max-width: 100%;width: 600px;'  width='600'/></a><script data-plotly=" + graph_url.replace('https://plot.ly/~', '') + " src='https://plot.ly/embed.js' async></script></div>"
+    html = "<div><a href=" + graph_url + "target='_blank' title='" + website  + "-from-api' style='display: block; text-align: center;'><img src=" + graph_url + ".png alt='" + website + "-from-api' style='max-width: 100%;width: 600px;'  width='600'/></a><script data-plotly=" + graph_url.replace('https://plot.ly/~', '') + " src='https://plot.ly/embed.js' async></script></div>"
+
     return html
 
 
+def compare_from_api_subcriteria(website):
+    url="https://wh5ya21546.execute-api.eu-west-3.amazonaws.com/dev/hilight/" + website
+    json_url = urllib.request.urlopen(url)
+    data = json.loads(json_url.read())
+    body = json.loads(data['body'])
+    body = re.sub(' +', ' ', body)
+    body = json.loads(body)
+
+    data_evaluation = {}
+    for i in body:
+        if i['gradeCriteria'] != -6:
+            data_evaluation[i['nameCriteria']] = i['subCriterias']
+
+    print(data_evaluation)
+
+def compare_between_cgu(website_list):
+    grade_negatives = {}
+
+    for website in website_list:
+        url="https://wh5ya21546.execute-api.eu-west-3.amazonaws.com/dev/hilight/" + website
+        json_url = urllib.request.urlopen(url)
+        data = json.loads(json_url.read())
+        body = json.loads(data['body'])
+        body = re.sub(' +', ' ', body)
+        body = json.loads(body)
+
+        grades = 0
+        numbers_of_negatives_grades = 0
+        counter = 0
+
+        for i in body:
+            if i['gradeCriteria'] != -6:
+                grades += i['gradeCriteria']
+                counter += 1
+
+                if i['gradeCriteria'] < 0:
+                    numbers_of_negatives_grades += 1
+
+        average = grades/counter
+        grade_negatives[website] = {}
+        grade_negatives[website]['average'] = average
+        grade_negatives[website]['numbers_of_negative_grades'] = numbers_of_negatives_grades
+        
+    data_evaluation = []
+    for website in grade_negatives:
+        trace = go.Scatter(
+            x=[grade_negatives[website]['numbers_of_negative_grades']],
+            y=[grade_negatives[website]['average']],
+            mode='markers',
+            name=website,
+            text=website,
+            marker=dict(
+                size=[40],
+            )
+        )
+        data_evaluation.append(trace)
+
+    layout = go.Layout(
+        title='Comparison between companies',
+        xaxis=dict(
+            title='Number of negative grades',
+            zeroline=True,
+            showline=True,
+            range=[0, 10],
+            zerolinewidth=1,
+            ticklen=5,
+            gridwidth=2,
+        ),
+        yaxis=dict(
+            title='Average grade',
+            zeroline=True,
+            showline=True,
+            range=[-1, 1],
+            zerolinewidth=1,
+            ticklen=5,
+            gridwidth=2,
+        ),
+        paper_bgcolor='rgb(243, 243, 243)',
+        plot_bgcolor='rgb(243, 243, 243)',
+    )
+
+    fig = go.Figure(data=data_evaluation, layout=layout)
+    graph_url = py.plot(fig, filename='bubble-compare')
+
+    html = "<div><a href=" + graph_url + "target='_blank' title='comparison-between-cgus' style='display: block; text-align: center;'><img src=" + graph_url + ".png alt='comparison-from-api' style='max-width: 100%;width: 600px;'  width='600'/></a><script data-plotly=" + graph_url.replace('https://plot.ly/~', '') + " src='https://plot.ly/embed.js' async></script></div>"
+
+    return html
 
 #graph_bar()
 #graph_pie()
-#compare_grade_percentage()
-print(compare_from_api_twitter())
+#compare_from_api(website)
+#compare_from_api_subcriteria('twitter')
+#print(compare_between_cgu(['twitter', 'facebook', 'amazon']))
 
 
 
+ 
