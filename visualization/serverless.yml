@@ -19,6 +19,16 @@ functions:
            parameters:
             paths:
              websitename: true
+  hilight-global-chart:
+    handler: lambda_function.handler2
+    environment:
+     PLOTLY_DIR: /var/task/.plotly
+    events:
+      - http:
+          path: /hilightglobalchart
+          method: get
+          cors: true
+          integration: lambda
 
 plugins:
   - serverless-python-requirements

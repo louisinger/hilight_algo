@@ -181,6 +181,4 @@ def main_function():
         if(i!= 0):
             col.insert_one(i)
 """
-def lambda_handler(event, context):
-    print('update the database')
 
