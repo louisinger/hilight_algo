@@ -280,5 +280,10 @@ def compare_between_cgu(website_list):
 print(compare_between_cgu(['twitter', 'facebook', 'amazon']))
 
 
+<<<<<<< HEAD
 # carte des drogues - bubble chart
 # sous critères - pie
+=======
+
+ 
+>>>>>>> 925e4cf4229b2daf38bacf5a88530c80ba013af2
