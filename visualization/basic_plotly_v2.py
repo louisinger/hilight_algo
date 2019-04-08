@@ -180,7 +180,7 @@ def compare_from_api(website):
 
     graph_url = py.plot(dataBar, filename = website + '-from-api', auto_open=True)
 
-    html = "<div><a href=" + graph_url + "target='_blank' title='" + website  + "-from-api' style='display: block; text-align: center;'><img src=" + graph_url + ".png alt='" + website + "-from-api' style='max-width: 100%;width: 600px;'  width='600'/></a><script data-plotly=" + graph_url.replace('https://plot.ly/~', '') + " src='https://plot.ly/embed.js' async></script></div>"
+    html = "<div><a href=" + graph_url + "target='_blank' title='" + website  + "-from-api' style='display: block; text-align: center;'><img src=" + graph_url + ".png alt='" + website + "-from-api'/></a><script data-plotly=" + graph_url.replace('https://plot.ly/~', '') + " src='https://plot.ly/embed.js' async></script></div>"
 
     return html
 
@@ -248,7 +248,7 @@ def compare_between_cgu(website_list):
             title='Number of negative grades',
             zeroline=True,
             showline=True,
-            range=[0, 10],
+            range=[0, 12],
             zerolinewidth=1,
             ticklen=5,
             gridwidth=2,
@@ -269,7 +269,7 @@ def compare_between_cgu(website_list):
     fig = go.Figure(data=data_evaluation, layout=layout)
     graph_url = py.plot(fig, filename='bubble-compare')
 
-    html = "<div><a href=" + graph_url + "target='_blank' title='comparison-between-cgus' style='display: block; text-align: center;'><img src=" + graph_url + ".png alt='comparison-from-api' style='max-width: 100%;width: 600px;'  width='600'/></a><script data-plotly=" + graph_url.replace('https://plot.ly/~', '') + " src='https://plot.ly/embed.js' async></script></div>"
+    html = "<div><a href=" + graph_url + "target='_blank' title='comparison-between-cgus' style='display: block; text-align: center;'><img src=" + graph_url + ".png alt='comparison-from-api'/></a><script data-plotly=" + graph_url.replace('https://plot.ly/~', '') + " src='https://plot.ly/embed.js' async></script></div>"
 
     return html
 
