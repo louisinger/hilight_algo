@@ -7,7 +7,7 @@ import json
 import urllib
 import re
 
-py.sign_in('axelc', '6qQk1TZYuAOpw0g7smjc')
+py.sign_in('hilight', '5xPiasl4LtSi3Ext95K1')
 
 categories = ["Personal data", "data controller", "Log data", "account data", "Processing", "third parties", "profiling", 
 "Data Subject", "Data Protection Officer", "Data Protection Authority"]
@@ -154,6 +154,16 @@ def compare_grade_percentage():
     py.plot(dataBar_good, filename = 'twitter-good-bar', auto_open=True)
     
 
+graphs_urls = {
+    'bubble-chart': '39',
+    'amazon': '37',
+    'facebook': '34',
+    'twitter': '32',
+    'google': '46',
+    'reddit': '44' 
+}
+
+
 def compare_from_api(website):
     url="https://wh5ya21546.execute-api.eu-west-3.amazonaws.com/dev/hilight/" + website
     json_url = urllib.request.urlopen(url)
@@ -180,7 +190,7 @@ def compare_from_api(website):
 
     graph_url = py.plot(dataBar, filename = website + '-from-api', auto_open=True)
 
-    html = "<div><a href=" + graph_url + "target='_blank' title='" + website  + "-from-api' style='display: block; text-align: center;'><img src=" + graph_url + ".png alt='" + website + "-from-api'/></a><script data-plotly=" + graph_url.replace('https://plot.ly/~', '') + " src='https://plot.ly/embed.js' async></script></div>"
+    html = "<div><a href=" + graph_url + " target='_blank' title='" + website  + "-from-api' style='display: block; text-align: center;'><img src=" + graph_url + ".png alt='" + website + "-from-api'/></a><script data-plotly=" + graph_url.replace('https://plot.ly/~', '') + " src='https://plot.ly/embed.js' async></script></div>"
 
     return html
 
@@ -275,7 +285,7 @@ def compare_between_cgu(website_list):
 
 #graph_bar()
 #graph_pie()
-#compare_from_api(website)
+print(compare_from_api('twitter'))
 #compare_from_api_subcriteria('twitter')
 #print(compare_between_cgu(['twitter', 'facebook', 'amazon']))
 
