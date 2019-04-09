@@ -59,7 +59,7 @@ def graph_bar():
         )
         dataBar.append(trace)
         
-    py.plot(dataBar, filename = 'twitter-bar-basic', auto_open=True)
+    py.plot(dataBar, filename = 'twitter-bar-basic')
 
     dic_basic = build_dic_basic() 
 
@@ -73,7 +73,7 @@ def graph_bar():
         )
         dataBar.append(trace)
         
-    py.plot(dataBar, filename = 'twitter-bar-grouped', auto_open=True)
+    py.plot(dataBar, filename = 'twitter-bar-grouped')
 
 
 def graph_pie():
@@ -86,7 +86,7 @@ def graph_pie():
         values.append(dic_full[word])
 
     trace = go.Pie(labels=labels, values=values)
-    py.plot([trace], filename = 'twitter-pie-grouped', auto_open=True)
+    py.plot([trace], filename = 'twitter-pie-grouped')
 
 
     dic_basic = build_dic_basic()
@@ -98,7 +98,7 @@ def graph_pie():
         values.append(dic_basic[word])
 
     trace = go.Pie(labels=labels, values=values)
-    py.plot([trace], filename = 'twitter-pie-basic', auto_open=True)
+    py.plot([trace], filename = 'twitter-pie-basic')
 
 def json_grade_test():
     from random import randint
@@ -150,21 +150,27 @@ def compare_grade_percentage():
         )
         dataBar_good.append(trace)    
 
-    py.plot(dataBar_bad, filename = 'twitter-bad-bar', auto_open=True)
-    py.plot(dataBar_good, filename = 'twitter-good-bar', auto_open=True)
+    py.plot(dataBar_bad, filename = 'twitter-bad-bar')
+    py.plot(dataBar_good, filename = 'twitter-good-bar')
     
 
 graphs_urls = {
-    'bubble-chart': '39',
-    'amazon': '37',
-    'facebook': '34',
-    'twitter': '32',
-    'google': '46',
-    'reddit': '44' 
+    'twitter': '0',
+    'facebook': '6',
+    'amazon': '16',
+    'blogspot': '24',
+    'ebay': '14',
+    'google': '26',
+    'instagram': '4',
+    'microsoft': '18',
+    'netflix': '8', 
+    'reddit': '20',
+    'wikipedia': '12',
+    'yahoo': '10',
+    'youtube': '22'
 }
 
-
-def compare_from_api(website):
+def update_compare_from_api(website):
     url="https://wh5ya21546.execute-api.eu-west-3.amazonaws.com/dev/hilight/" + website
     json_url = urllib.request.urlopen(url)
     data = json.loads(json_url.read())
@@ -174,11 +180,11 @@ def compare_from_api(website):
 
     data_evaluation = {}
     for i in body:
-        if i['gradeCriteria'] != -6:
+        if i['gradeCriteria'] == -6:
+            data_evaluation[i['nameCriteria']] = 0
+        else:
             data_evaluation[i['nameCriteria']] = i['gradeCriteria']
     
-    #pprint(data_evaluation)
-
     dataBar = []
     for category in data_evaluation:
         trace = go.Bar(
@@ -187,14 +193,14 @@ def compare_from_api(website):
             name=category
         )
         dataBar.append(trace)
-
-    graph_url = py.plot(dataBar, filename = website + '-from-api', auto_open=True)
-
-    html = "<div><a href=" + graph_url + " target='_blank' title='" + website  + "-from-api' style='display: block; text-align: center;'><img src=" + graph_url + ".png alt='" + website + "-from-api'/></a><script data-plotly=" + graph_url.replace('https://plot.ly/~', '') + " src='https://plot.ly/embed.js' async></script></div>"
-
-    return html
+    py.plot(dataBar, filename=website + '-from-api')
 
 
+def compare_from_api(website):
+    return 'https://plot.ly/~hilight/' + graphs_urls[website]
+
+
+'''
 def compare_from_api_subcriteria(website):
     url="https://wh5ya21546.execute-api.eu-west-3.amazonaws.com/dev/hilight/" + website
     json_url = urllib.request.urlopen(url)
@@ -209,8 +215,9 @@ def compare_from_api_subcriteria(website):
             data_evaluation[i['nameCriteria']] = i['subCriterias']
 
     print(data_evaluation)
+'''
 
-def compare_between_cgu(website_list):
+def update_compare_between_cgu(website_list):
     grade_negatives = {}
 
     for website in website_list:
@@ -277,18 +284,18 @@ def compare_between_cgu(website_list):
     )
 
     fig = go.Figure(data=data_evaluation, layout=layout)
-    graph_url = py.plot(fig, filename='bubble-compare')
+    py.plot(fig, filename='bubble-compare')
 
-    html = "<div><a href=" + graph_url + "target='_blank' title='comparison-between-cgus' style='display: block; text-align: center;'><img src=" + graph_url + ".png alt='comparison-from-api'/></a><script data-plotly=" + graph_url.replace('https://plot.ly/~', '') + " src='https://plot.ly/embed.js' async></script></div>"
+def compare_between_cgu(website_list):
+    return 'https://plot.ly/~hilight/2'
 
-    return html
 
 #graph_bar()
 #graph_pie()
-#print(compare_from_api('twitter'))
+#print(compare_from_api('instagram'))
 #compare_from_api_subcriteria('twitter')
 #print(compare_between_cgu(['twitter', 'facebook', 'amazon']))
-
-
+#update_compare_from_api('instagram')
+#print(compare_from_api('instagram'))
 
  
