@@ -285,7 +285,7 @@ def compare_between_cgu(website_list):
 
 #graph_bar()
 #graph_pie()
-print(compare_from_api('twitter'))
+#print(compare_from_api('twitter'))
 #compare_from_api_subcriteria('twitter')
 #print(compare_between_cgu(['twitter', 'facebook', 'amazon']))
 
