@@ -193,7 +193,18 @@ def update_compare_from_api(website):
             name=category
         )
         dataBar.append(trace)
-    py.plot(dataBar, filename=website + '-from-api')
+    
+    layout = go.Layout(
+        title=website,
+        xaxis=dict(
+            showticklabels=False
+        ),
+        yaxis=dict(
+            title='Grade'
+        )
+    )
+    fig = go.Figure(data=dataBar, layout=layout)
+    py.plot(fig, filename=website + '-from-api')
 
 
 def compare_from_api(website):
@@ -260,7 +271,6 @@ def update_compare_between_cgu(website_list):
         data_evaluation.append(trace)
 
     layout = go.Layout(
-        title='Comparison between companies',
         xaxis=dict(
             title='Number of negative grades',
             zeroline=True,
@@ -286,16 +296,13 @@ def update_compare_between_cgu(website_list):
     fig = go.Figure(data=data_evaluation, layout=layout)
     py.plot(fig, filename='bubble-compare')
 
-def compare_between_cgu(website_list):
+def compare_between_cgu():
     return 'https://plot.ly/~hilight/2'
 
 
-#graph_bar()
-#graph_pie()
-#print(compare_from_api('instagram'))
-#compare_from_api_subcriteria('twitter')
-#print(compare_between_cgu(['twitter', 'facebook', 'amazon']))
-#update_compare_from_api('instagram')
+#print(compare_between_cgu())
+#update_compare_between_cgu(['twitter', 'facebook', 'amazon', 'blogspot', 'ebay', 'google', 'instagram', 'microsoft', 'netflix', 'reddit', 'wikipedia', 'yahoo', 'youtube'])
+update_compare_from_api('twitter')
 #print(compare_from_api('instagram'))
 
  
